@@ -24,6 +24,7 @@ CREATE TABLE Site(
 CREATE TABLE Action(
         id               int (11) Auto_increment  NOT NULL ,
         date_a           Date ,
+	delais           Date ,
         source           Varchar (500) ,
         analyse          Varchar (200) ,
         description      Varchar (200) ,
