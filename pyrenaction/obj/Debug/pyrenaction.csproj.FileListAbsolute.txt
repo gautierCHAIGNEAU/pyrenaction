@@ -1,1 +1,16 @@
 C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe.config
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.pdb
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csprojResolveAssemblyReference.cache
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\MainWindow.g.cs
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\App.g.cs
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.cache
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.lref
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\MainWindow.baml
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.g.resources
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Properties.Resources.resources
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Action.ucAction.resources
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Connexion.ucConnexion.resources
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.GenerateResource.Cache
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
+C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
