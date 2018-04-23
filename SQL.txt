@@ -147,4 +147,4 @@ ALTER TABLE Tache ADD CONSTRAINT FK_Tache_id_Action FOREIGN KEY (id_Action) REFE
 ALTER TABLE Question ADD CONSTRAINT FK_Question_id_Questionnaire FOREIGN KEY (id_Questionnaire) REFERENCES Questionnaire(id);
 ALTER TABLE Lien ADD CONSTRAINT FK_Lien_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id);
 ALTER TABLE Mail ADD CONSTRAINT FK_Mail_id_Utilisateur FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id);
-ALTER TABLE Mail ADD CONSTRAINT FK_Mail_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id);
+ALTER TABLE Mail ADD CONSTRAINT FK_Mail_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id); 
