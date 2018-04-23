@@ -1,0 +1,157 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Site
+#------------------------------------------------------------
+
+CREATE TABLE Site(
+        id      int (11) Auto_increment  NOT NULL ,
+        nom     Varchar (200) ,
+        adresse Varchar (200) ,
+        ville   Varchar (50) ,
+        cp      Varchar (10) ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Action
+#------------------------------------------------------------
+
+CREATE TABLE Action(
+        id               int (11) Auto_increment  NOT NULL ,
+        date_a           Date ,
+        source           Varchar (500) ,
+        analyse          Varchar (200) ,
+        description      Varchar (200) ,
+        statut           Bool ,
+        id_Importance    Int NOT NULL ,
+        id_Famille       Int NOT NULL ,
+        id_Site          Int NOT NULL ,
+        id_Questionnaire Int NOT NULL ,
+        id_1             Int NOT NULL ,
+        id_Utilisateur   Int NOT NULL ,
+        id_Utilisateur_2 Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Tache
+#------------------------------------------------------------
+
+CREATE TABLE Tache(
+        id        int (11) Auto_increment  NOT NULL ,
+        statut    Bool ,
+        nom       Varchar (200) ,
+        id_Action Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Utilisateur
+#------------------------------------------------------------
+
+CREATE TABLE Utilisateur(
+        id     int (11) Auto_increment  NOT NULL ,
+        nom    Varchar (50) ,
+        prenom Varchar (50) ,
+        mdp    Varchar (500) ,
+        qse    Bool ,
+        email  Varchar (50) ,
+        tel    Varchar (20) ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Question
+#------------------------------------------------------------
+
+CREATE TABLE Question(
+        id               int (11) Auto_increment  NOT NULL ,
+        intitule         Varchar (500) ,
+        reponse          Bool ,
+        commentaire      Varchar (500) ,
+        id_Questionnaire Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Questionnaire
+#------------------------------------------------------------
+
+CREATE TABLE Questionnaire(
+        id       int (11) Auto_increment  NOT NULL ,
+        nb_point Int ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Lien
+#------------------------------------------------------------
+
+CREATE TABLE Lien(
+        id        int (11) Auto_increment  NOT NULL ,
+        nom       Varchar (100) ,
+        url       Varchar (500) ,
+        id_Action Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Famille
+#------------------------------------------------------------
+
+CREATE TABLE Famille(
+        id  int (11) Auto_increment  NOT NULL ,
+        nom Varchar (50) ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Importance
+#------------------------------------------------------------
+
+CREATE TABLE Importance(
+        id     int (11) Auto_increment  NOT NULL ,
+        nom    Varchar (50) ,
+        numero Int ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Mail
+#------------------------------------------------------------
+
+CREATE TABLE Mail(
+        id             int (11) Auto_increment  NOT NULL ,
+        objet          Varchar (200) ,
+        contenu        Text ,
+        date_m         Date ,
+        id_Utilisateur Int NOT NULL ,
+        id_Action      Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Importance FOREIGN KEY (id_Importance) REFERENCES Importance(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Famille FOREIGN KEY (id_Famille) REFERENCES Famille(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Site FOREIGN KEY (id_Site) REFERENCES Site(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Questionnaire FOREIGN KEY (id_Questionnaire) REFERENCES Questionnaire(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_1 FOREIGN KEY (id_1) REFERENCES Action(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Utilisateur FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id);
+ALTER TABLE Action ADD CONSTRAINT FK_Action_id_Utilisateur_2 FOREIGN KEY (id_Utilisateur_2) REFERENCES Utilisateur(id);
+ALTER TABLE Tache ADD CONSTRAINT FK_Tache_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id);
+ALTER TABLE Question ADD CONSTRAINT FK_Question_id_Questionnaire FOREIGN KEY (id_Questionnaire) REFERENCES Questionnaire(id);
+ALTER TABLE Lien ADD CONSTRAINT FK_Lien_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id);
+ALTER TABLE Mail ADD CONSTRAINT FK_Mail_id_Utilisateur FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id);
+ALTER TABLE Mail ADD CONSTRAINT FK_Mail_id_Action FOREIGN KEY (id_Action) REFERENCES Action(id);
