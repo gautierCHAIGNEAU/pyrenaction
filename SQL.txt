@@ -30,10 +30,10 @@ CREATE TABLE Action(
 	id_Importance    INT  NOT NULL ,
 	id_Famille       INT  NOT NULL ,
 	id_Site          INT  NOT NULL ,
-	id_Questionnaire INT  NOT NULL ,
-	id_1             INT  NOT NULL ,
+	id_Questionnaire INT  NULL ,
+	id_1             INT  NULL ,
 	id_Utilisateur   INT  NOT NULL ,
-	id_Utilisateur_2 INT  NOT NULL ,
+	id_Utilisateur_2 INT  NULL ,
 	CONSTRAINT prk_constraint_Action PRIMARY KEY NONCLUSTERED (id)
 );
 
@@ -73,7 +73,7 @@ CREATE TABLE Question(
 	intitule         VARCHAR (500)  ,
 	reponse          bit   ,
 	commentaire      VARCHAR (500)  ,
-	id_Questionnaire INT  NOT NULL ,
+	id_Questionnaire INT  NULL ,
 	CONSTRAINT prk_constraint_Question PRIMARY KEY NONCLUSTERED (id)
 );
 
