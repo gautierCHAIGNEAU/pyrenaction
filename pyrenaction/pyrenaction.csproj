@@ -121,6 +121,9 @@
     <Compile Include="Views\Tache.xaml.cs">
       <DependentUpon>Tache.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ucTabBord.xaml.cs">
+      <DependentUpon>ucTabBord.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +145,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Tache.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ucTabBord.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

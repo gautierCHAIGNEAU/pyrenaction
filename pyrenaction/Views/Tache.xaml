@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:pyrenaction.Views"
       mc:Ignorable="d" d:DesignWidth="300"
-      Title="Tache" Height="237.313">
+     Height="237.313">
 
     <Grid Margin="0,0,0,10">
         <Label x:Name="label" Content="Gestion de la tâche" HorizontalAlignment="Left" Margin="98,20,0,0" VerticalAlignment="Top"/>

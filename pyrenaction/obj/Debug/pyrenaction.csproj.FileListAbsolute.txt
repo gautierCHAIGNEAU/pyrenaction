@@ -40,3 +40,5 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.g.cs
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Action.baml
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.baml
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.g.cs

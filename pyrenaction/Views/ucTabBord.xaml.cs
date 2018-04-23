@@ -18,7 +18,7 @@ namespace pyrenaction.Views
     /// <summary>
     /// Logique d'interaction pour ucTabBord.xaml
     /// </summary>
-    public partial class ucTabBord : UserControl
+    public partial class ucTabBord : Grid
     {
         public ucTabBord()
         {
@@ -27,7 +27,7 @@ namespace pyrenaction.Views
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
 
-                var query = from U in context.Actions select U;
+                var query = from U in context.Action select U;
                 List<Models.Action> listeActions = query.ToList();
 
                 dataGrid.ItemsSource = listeActions;

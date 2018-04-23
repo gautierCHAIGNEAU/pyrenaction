@@ -34,6 +34,8 @@ namespace pyrenaction
 
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
+                Views.ucTabBord tabBordView = new Views.ucTabBord();
+                textControl.Content = tabBordView;
                 //Models.Utilisateur user = new Models.Utilisateur();
                 //user.nom = "Chaigneau";
                 //user.prenom = "Gautier";
