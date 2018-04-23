@@ -1,12 +1,22 @@
-﻿<Window x:Class="pyrenaction.MainWindow"
+﻿<Window xmlns:Views="clr-namespace:pyrenaction.Views.TableauDeBord"
+        x:Class="pyrenaction.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pyrenaction"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+        Title="Pyrenaction" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem Header="Ajouter une tâche" />
+            <MenuItem Header="Ajouter un utilisateur"  />
+        </Menu>
+
     </Grid>
 </Window>

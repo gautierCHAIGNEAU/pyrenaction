@@ -122,6 +122,13 @@
     <Compile Include="Views\Connexion\ucConnexion.Designer.cs">
       <DependentUpon>ucConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TableauDeBord\Action.cs" />
+    <Compile Include="Views\TableauDeBord\ucTableauDeBord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TableauDeBord\ucTableauDeBord.Designer.cs">
+      <DependentUpon>ucTableauDeBord.cs</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Connexion\ucConnexion.resx">
       <DependentUpon>ucConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TableauDeBord\ucTableauDeBord.resx">
+      <DependentUpon>ucTableauDeBord.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\pyrenactionDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

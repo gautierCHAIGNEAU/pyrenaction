@@ -27,20 +27,26 @@ namespace pyrenaction
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
-            //{
-            //    Models.Utilisateur user = new Models.Utilisateur();
-            //    user.nom = "Chaigneau";
-            //    user.prenom = "Gautier";
-            //    user.email = "gautier.chaigneau@gmail.com";
-            //    user.qse = true;
-            //    user.tel = "0562356879";
-            //    user.mdp = "toto";
+            using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
+            {
+                //Models.Utilisateur user = new Models.Utilisateur();
+                //user.nom = "Chaigneau";
+                //user.prenom = "Gautier";
+                //user.email = "gautier.chaigneau@gmail.com";
+                //user.qse = true;
+                //user.tel = "0562356879";
+                //user.mdp = "toto";
 
-            //    context.Utilisateur.Add(user);
-            //    context.SaveChanges();
+                //context.Utilisateur.Add(user);
+                //context.SaveChanges();
 
-            //}
+                //var query = from U in context.Utilisateur select U;
+                //List<Models.Utilisateur> listeUsers = query.ToList();
+
+                //context.Utilisateur.Remove(listeUsers.Last());
+                //context.SaveChanges();
+
+            }
 
         }
     }

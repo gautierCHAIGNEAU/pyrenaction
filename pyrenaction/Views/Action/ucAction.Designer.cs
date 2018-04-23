@@ -309,7 +309,7 @@
             // 
             this.buttonAjouter.Location = new System.Drawing.Point(440, 466);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(105, 23);
+            this.buttonAjouter.Size = new System.Drawing.Size(105, 32);
             this.buttonAjouter.TabIndex = 35;
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = true;
