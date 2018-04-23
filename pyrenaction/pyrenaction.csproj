@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +56,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\Action\ucAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Action\ucAction.Designer.cs">
+      <DependentUpon>ucAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Connexion\ucConnexion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Connexion\ucConnexion.Designer.cs">
+      <DependentUpon>ucConnexion.cs</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +99,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Action\ucAction.resx">
+      <DependentUpon>ucAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Connexion\ucConnexion.resx">
+      <DependentUpon>ucConnexion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,7 +117,6 @@
     <Folder Include="Models\" />
     <Folder Include="Server\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
