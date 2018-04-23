@@ -1,5 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="pyrenactionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="pyrenactionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actions" EntityType="pyrenactionModel.Action" />
+    <EntitySet Name="Familles" EntityType="pyrenactionModel.Famille" />
+    <EntitySet Name="Importances" EntityType="pyrenactionModel.Importance" />
+    <EntitySet Name="Liens" EntityType="pyrenactionModel.Lien" />
+    <EntitySet Name="Mails" EntityType="pyrenactionModel.Mail" />
+    <EntitySet Name="Questions" EntityType="pyrenactionModel.Question" />
+    <EntitySet Name="Questionnaires" EntityType="pyrenactionModel.Questionnaire" />
+    <EntitySet Name="Sites" EntityType="pyrenactionModel.Site" />
+    <EntitySet Name="Taches" EntityType="pyrenactionModel.Tache" />
+    <EntitySet Name="Utilisateurs" EntityType="pyrenactionModel.Utilisateur" />
+    <AssociationSet Name="FK_Action_id_1" Association="pyrenactionModel.FK_Action_id_1">
+      <End Role="Action" EntitySet="Actions" />
+      <End Role="Action1" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Famille" Association="pyrenactionModel.FK_Action_id_Famille">
+      <End Role="Famille" EntitySet="Familles" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Importance" Association="pyrenactionModel.FK_Action_id_Importance">
+      <End Role="Importance" EntitySet="Importances" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Questionnaire" Association="pyrenactionModel.FK_Action_id_Questionnaire">
+      <End Role="Questionnaire" EntitySet="Questionnaires" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Site" Association="pyrenactionModel.FK_Action_id_Site">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Utilisateur" Association="pyrenactionModel.FK_Action_id_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Utilisateur_2" Association="pyrenactionModel.FK_Action_id_Utilisateur_2">
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lien_id_Action" Association="pyrenactionModel.FK_Lien_id_Action">
+      <End Role="Action" EntitySet="Actions" />
+      <End Role="Lien" EntitySet="Liens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mail_id_Action" Association="pyrenactionModel.FK_Mail_id_Action">
+      <End Role="Action" EntitySet="Actions" />
+      <End Role="Mail" EntitySet="Mails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tache_id_Action" Association="pyrenactionModel.FK_Tache_id_Action">
+      <End Role="Action" EntitySet="Actions" />
+      <End Role="Tache" EntitySet="Taches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mail_id_Utilisateur" Association="pyrenactionModel.FK_Mail_id_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+      <End Role="Mail" EntitySet="Mails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_id_Questionnaire" Association="pyrenactionModel.FK_Question_id_Questionnaire">
+      <End Role="Questionnaire" EntitySet="Questionnaires" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Action">
     <Key>
       <PropertyRef Name="id" />
@@ -14,21 +74,21 @@
     <Property Name="id_Importance" Type="Int32" Nullable="false" />
     <Property Name="id_Famille" Type="Int32" Nullable="false" />
     <Property Name="id_Site" Type="Int32" Nullable="false" />
-    <Property Name="id_Questionnaire" Type="Int32" Nullable="false" />
-    <Property Name="id_1" Type="Int32" Nullable="false" />
+    <Property Name="id_Questionnaire" Type="Int32" />
+    <Property Name="id_1" Type="Int32" />
     <Property Name="id_Utilisateur" Type="Int32" Nullable="false" />
-    <Property Name="id_Utilisateur_2" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Action1" Relationship="Self.FK_Action_id_1" FromRole="Action" ToRole="Action1" />
-    <NavigationProperty Name="Action2" Relationship="Self.FK_Action_id_1" FromRole="Action1" ToRole="Action" />
-    <NavigationProperty Name="Famille" Relationship="Self.FK_Action_id_Famille" FromRole="Action" ToRole="Famille" />
-    <NavigationProperty Name="Importance" Relationship="Self.FK_Action_id_Importance" FromRole="Action" ToRole="Importance" />
-    <NavigationProperty Name="Questionnaire" Relationship="Self.FK_Action_id_Questionnaire" FromRole="Action" ToRole="Questionnaire" />
-    <NavigationProperty Name="Site" Relationship="Self.FK_Action_id_Site" FromRole="Action" ToRole="Site" />
-    <NavigationProperty Name="Utilisateur" Relationship="Self.FK_Action_id_Utilisateur" FromRole="Action" ToRole="Utilisateur" />
-    <NavigationProperty Name="Utilisateur1" Relationship="Self.FK_Action_id_Utilisateur_2" FromRole="Action" ToRole="Utilisateur" />
-    <NavigationProperty Name="Lien" Relationship="Self.FK_Lien_id_Action" FromRole="Action" ToRole="Lien" />
-    <NavigationProperty Name="Mail" Relationship="Self.FK_Mail_id_Action" FromRole="Action" ToRole="Mail" />
-    <NavigationProperty Name="Tache" Relationship="Self.FK_Tache_id_Action" FromRole="Action" ToRole="Tache" />
+    <Property Name="id_Utilisateur_2" Type="Int32" />
+    <NavigationProperty Name="Action1" Relationship="pyrenactionModel.FK_Action_id_1" FromRole="Action" ToRole="Action1" />
+    <NavigationProperty Name="Action2" Relationship="pyrenactionModel.FK_Action_id_1" FromRole="Action1" ToRole="Action" />
+    <NavigationProperty Name="Famille" Relationship="pyrenactionModel.FK_Action_id_Famille" FromRole="Action" ToRole="Famille" />
+    <NavigationProperty Name="Importance" Relationship="pyrenactionModel.FK_Action_id_Importance" FromRole="Action" ToRole="Importance" />
+    <NavigationProperty Name="Questionnaire" Relationship="pyrenactionModel.FK_Action_id_Questionnaire" FromRole="Action" ToRole="Questionnaire" />
+    <NavigationProperty Name="Site" Relationship="pyrenactionModel.FK_Action_id_Site" FromRole="Action" ToRole="Site" />
+    <NavigationProperty Name="Utilisateur" Relationship="pyrenactionModel.FK_Action_id_Utilisateur" FromRole="Action" ToRole="Utilisateur" />
+    <NavigationProperty Name="Utilisateur1" Relationship="pyrenactionModel.FK_Action_id_Utilisateur_2" FromRole="Action" ToRole="Utilisateur" />
+    <NavigationProperty Name="Liens" Relationship="pyrenactionModel.FK_Lien_id_Action" FromRole="Action" ToRole="Lien" />
+    <NavigationProperty Name="Mails" Relationship="pyrenactionModel.FK_Mail_id_Action" FromRole="Action" ToRole="Mail" />
+    <NavigationProperty Name="Taches" Relationship="pyrenactionModel.FK_Tache_id_Action" FromRole="Action" ToRole="Tache" />
   </EntityType>
   <EntityType Name="Famille">
     <Key>
@@ -36,7 +96,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Action_id_Famille" FromRole="Famille" ToRole="Action" />
+    <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Famille" FromRole="Famille" ToRole="Action" />
   </EntityType>
   <EntityType Name="Importance">
     <Key>
@@ -45,7 +105,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="numero" Type="Int32" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Action_id_Importance" FromRole="Importance" ToRole="Action" />
+    <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Importance" FromRole="Importance" ToRole="Action" />
   </EntityType>
   <EntityType Name="Lien">
     <Key>
@@ -55,7 +115,7 @@
     <Property Name="nom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="id_Action" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Lien_id_Action" FromRole="Lien" ToRole="Action" />
+    <NavigationProperty Name="Action" Relationship="pyrenactionModel.FK_Lien_id_Action" FromRole="Lien" ToRole="Action" />
   </EntityType>
   <EntityType Name="Mail">
     <Key>
@@ -67,8 +127,8 @@
     <Property Name="date_m" Type="DateTime" Precision="3" />
     <Property Name="id_Utilisateur" Type="Int32" Nullable="false" />
     <Property Name="id_Action" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Mail_id_Action" FromRole="Mail" ToRole="Action" />
-    <NavigationProperty Name="Utilisateur" Relationship="Self.FK_Mail_id_Utilisateur" FromRole="Mail" ToRole="Utilisateur" />
+    <NavigationProperty Name="Action" Relationship="pyrenactionModel.FK_Mail_id_Action" FromRole="Mail" ToRole="Action" />
+    <NavigationProperty Name="Utilisateur" Relationship="pyrenactionModel.FK_Mail_id_Utilisateur" FromRole="Mail" ToRole="Utilisateur" />
   </EntityType>
   <EntityType Name="Question">
     <Key>
@@ -78,8 +138,8 @@
     <Property Name="intitule" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="reponse" Type="Boolean" />
     <Property Name="commentaire" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="id_Questionnaire" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Questionnaire" Relationship="Self.FK_Question_id_Questionnaire" FromRole="Question" ToRole="Questionnaire" />
+    <Property Name="id_Questionnaire" Type="Int32" />
+    <NavigationProperty Name="Questionnaire" Relationship="pyrenactionModel.FK_Question_id_Questionnaire" FromRole="Question" ToRole="Questionnaire" />
   </EntityType>
   <EntityType Name="Questionnaire">
     <Key>
@@ -87,8 +147,8 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nb_point" Type="Int32" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Action_id_Questionnaire" FromRole="Questionnaire" ToRole="Action" />
-    <NavigationProperty Name="Question" Relationship="Self.FK_Question_id_Questionnaire" FromRole="Questionnaire" ToRole="Question" />
+    <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Questionnaire" FromRole="Questionnaire" ToRole="Action" />
+    <NavigationProperty Name="Questions" Relationship="pyrenactionModel.FK_Question_id_Questionnaire" FromRole="Questionnaire" ToRole="Question" />
   </EntityType>
   <EntityType Name="Site">
     <Key>
@@ -99,7 +159,7 @@
     <Property Name="adresse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="cp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Action_id_Site" FromRole="Site" ToRole="Action" />
+    <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Site" FromRole="Site" ToRole="Action" />
   </EntityType>
   <EntityType Name="Tache">
     <Key>
@@ -109,7 +169,7 @@
     <Property Name="statut" Type="Boolean" />
     <Property Name="nom" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="id_Action" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Tache_id_Action" FromRole="Tache" ToRole="Action" />
+    <NavigationProperty Name="Action" Relationship="pyrenactionModel.FK_Tache_id_Action" FromRole="Tache" ToRole="Action" />
   </EntityType>
   <EntityType Name="Utilisateur">
     <Key>
@@ -122,13 +182,13 @@
     <Property Name="qse" Type="Boolean" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Action" Relationship="Self.FK_Action_id_Utilisateur" FromRole="Utilisateur" ToRole="Action" />
-    <NavigationProperty Name="Action1" Relationship="Self.FK_Action_id_Utilisateur_2" FromRole="Utilisateur" ToRole="Action" />
-    <NavigationProperty Name="Mail" Relationship="Self.FK_Mail_id_Utilisateur" FromRole="Utilisateur" ToRole="Mail" />
+    <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Utilisateur" FromRole="Utilisateur" ToRole="Action" />
+    <NavigationProperty Name="Actions1" Relationship="pyrenactionModel.FK_Action_id_Utilisateur_2" FromRole="Utilisateur" ToRole="Action" />
+    <NavigationProperty Name="Mails" Relationship="pyrenactionModel.FK_Mail_id_Utilisateur" FromRole="Utilisateur" ToRole="Mail" />
   </EntityType>
   <Association Name="FK_Action_id_1">
-    <End Role="Action" Type="Self.Action" Multiplicity="1" />
-    <End Role="Action1" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="0..1" />
+    <End Type="pyrenactionModel.Action" Role="Action1" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Action">
         <PropertyRef Name="id" />
@@ -139,8 +199,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Famille">
-    <End Role="Famille" Type="Self.Famille" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Famille" Role="Famille" Multiplicity="1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Famille">
         <PropertyRef Name="id" />
@@ -151,8 +211,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Importance">
-    <End Role="Importance" Type="Self.Importance" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Importance" Role="Importance" Multiplicity="1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Importance">
         <PropertyRef Name="id" />
@@ -163,8 +223,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Questionnaire">
-    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Questionnaire" Role="Questionnaire" Multiplicity="0..1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Questionnaire">
         <PropertyRef Name="id" />
@@ -175,8 +235,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Site">
-    <End Role="Site" Type="Self.Site" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Site" Role="Site" Multiplicity="1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Site">
         <PropertyRef Name="id" />
@@ -187,8 +247,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Utilisateur">
-    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Utilisateur">
         <PropertyRef Name="id" />
@@ -199,8 +259,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Utilisateur_2">
-    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
-    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <End Type="pyrenactionModel.Utilisateur" Role="Utilisateur" Multiplicity="0..1" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Utilisateur">
         <PropertyRef Name="id" />
@@ -211,8 +271,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Lien_id_Action">
-    <End Role="Action" Type="Self.Action" Multiplicity="1" />
-    <End Role="Lien" Type="Self.Lien" Multiplicity="*" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="1" />
+    <End Type="pyrenactionModel.Lien" Role="Lien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Action">
         <PropertyRef Name="id" />
@@ -223,8 +283,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mail_id_Action">
-    <End Role="Action" Type="Self.Action" Multiplicity="1" />
-    <End Role="Mail" Type="Self.Mail" Multiplicity="*" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="1" />
+    <End Type="pyrenactionModel.Mail" Role="Mail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Action">
         <PropertyRef Name="id" />
@@ -235,8 +295,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Tache_id_Action">
-    <End Role="Action" Type="Self.Action" Multiplicity="1" />
-    <End Role="Tache" Type="Self.Tache" Multiplicity="*" />
+    <End Type="pyrenactionModel.Action" Role="Action" Multiplicity="1" />
+    <End Type="pyrenactionModel.Tache" Role="Tache" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Action">
         <PropertyRef Name="id" />
@@ -247,8 +307,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Mail_id_Utilisateur">
-    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
-    <End Role="Mail" Type="Self.Mail" Multiplicity="*" />
+    <End Type="pyrenactionModel.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+    <End Type="pyrenactionModel.Mail" Role="Mail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Utilisateur">
         <PropertyRef Name="id" />
@@ -259,8 +319,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Question_id_Questionnaire">
-    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
-    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <End Type="pyrenactionModel.Questionnaire" Role="Questionnaire" Multiplicity="0..1" />
+    <End Type="pyrenactionModel.Question" Role="Question" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Questionnaire">
         <PropertyRef Name="id" />
@@ -270,64 +330,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="pyrenactionEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Action" EntityType="Self.Action" />
-    <EntitySet Name="Famille" EntityType="Self.Famille" />
-    <EntitySet Name="Importance" EntityType="Self.Importance" />
-    <EntitySet Name="Lien" EntityType="Self.Lien" />
-    <EntitySet Name="Mail" EntityType="Self.Mail" />
-    <EntitySet Name="Question" EntityType="Self.Question" />
-    <EntitySet Name="Questionnaire" EntityType="Self.Questionnaire" />
-    <EntitySet Name="Site" EntityType="Self.Site" />
-    <EntitySet Name="Tache" EntityType="Self.Tache" />
-    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
-    <AssociationSet Name="FK_Action_id_1" Association="Self.FK_Action_id_1">
-      <End Role="Action" EntitySet="Action" />
-      <End Role="Action1" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Famille" Association="Self.FK_Action_id_Famille">
-      <End Role="Famille" EntitySet="Famille" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Importance" Association="Self.FK_Action_id_Importance">
-      <End Role="Importance" EntitySet="Importance" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Questionnaire" Association="Self.FK_Action_id_Questionnaire">
-      <End Role="Questionnaire" EntitySet="Questionnaire" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Site" Association="Self.FK_Action_id_Site">
-      <End Role="Site" EntitySet="Site" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Utilisateur" Association="Self.FK_Action_id_Utilisateur">
-      <End Role="Utilisateur" EntitySet="Utilisateur" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Action_id_Utilisateur_2" Association="Self.FK_Action_id_Utilisateur_2">
-      <End Role="Utilisateur" EntitySet="Utilisateur" />
-      <End Role="Action" EntitySet="Action" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Lien_id_Action" Association="Self.FK_Lien_id_Action">
-      <End Role="Action" EntitySet="Action" />
-      <End Role="Lien" EntitySet="Lien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mail_id_Action" Association="Self.FK_Mail_id_Action">
-      <End Role="Action" EntitySet="Action" />
-      <End Role="Mail" EntitySet="Mail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Tache_id_Action" Association="Self.FK_Tache_id_Action">
-      <End Role="Action" EntitySet="Action" />
-      <End Role="Tache" EntitySet="Tache" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mail_id_Utilisateur" Association="Self.FK_Mail_id_Utilisateur">
-      <End Role="Utilisateur" EntitySet="Utilisateur" />
-      <End Role="Mail" EntitySet="Mail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Question_id_Questionnaire" Association="Self.FK_Question_id_Questionnaire">
-      <End Role="Questionnaire" EntitySet="Questionnaire" />
-      <End Role="Question" EntitySet="Question" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

@@ -14,10 +14,10 @@
     <Property Name="id_Importance" Type="int" Nullable="false" />
     <Property Name="id_Famille" Type="int" Nullable="false" />
     <Property Name="id_Site" Type="int" Nullable="false" />
-    <Property Name="id_Questionnaire" Type="int" Nullable="false" />
-    <Property Name="id_1" Type="int" Nullable="false" />
+    <Property Name="id_Questionnaire" Type="int" />
+    <Property Name="id_1" Type="int" />
     <Property Name="id_Utilisateur" Type="int" Nullable="false" />
-    <Property Name="id_Utilisateur_2" Type="int" Nullable="false" />
+    <Property Name="id_Utilisateur_2" Type="int" />
   </EntityType>
   <EntityType Name="Famille">
     <Key>
@@ -62,7 +62,7 @@
     <Property Name="intitule" Type="varchar" MaxLength="500" />
     <Property Name="reponse" Type="bit" />
     <Property Name="commentaire" Type="varchar" MaxLength="500" />
-    <Property Name="id_Questionnaire" Type="int" Nullable="false" />
+    <Property Name="id_Questionnaire" Type="int" />
   </EntityType>
   <EntityType Name="Questionnaire">
     <Key>
@@ -103,7 +103,7 @@
     <Property Name="tel" Type="varchar" MaxLength="20" />
   </EntityType>
   <Association Name="FK_Action_id_1">
-    <End Role="Action" Type="Self.Action" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
     <End Role="Action1" Type="Self.Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Action">
@@ -139,7 +139,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Questionnaire">
-    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
     <End Role="Action" Type="Self.Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Questionnaire">
@@ -175,7 +175,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Action_id_Utilisateur_2">
-    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
     <End Role="Action" Type="Self.Action" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Utilisateur">
@@ -223,7 +223,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Question_id_Questionnaire">
-    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
     <End Role="Question" Type="Self.Question" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Questionnaire">

@@ -18,7 +18,7 @@ namespace pyrenaction.Models
         public string intitule { get; set; }
         public Nullable<bool> reponse { get; set; }
         public string commentaire { get; set; }
-        public int id_Questionnaire { get; set; }
+        public Nullable<int> id_Questionnaire { get; set; }
     
         public virtual Questionnaire Questionnaire { get; set; }
     }

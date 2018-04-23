@@ -18,9 +18,9 @@ namespace pyrenaction.Models
         public Action()
         {
             this.Action1 = new HashSet<Action>();
-            this.Lien = new HashSet<Lien>();
-            this.Mail = new HashSet<Mail>();
-            this.Tache = new HashSet<Tache>();
+            this.Liens = new HashSet<Lien>();
+            this.Mails = new HashSet<Mail>();
+            this.Taches = new HashSet<Tache>();
         }
     
         public int id { get; set; }
@@ -33,10 +33,10 @@ namespace pyrenaction.Models
         public int id_Importance { get; set; }
         public int id_Famille { get; set; }
         public int id_Site { get; set; }
-        public int id_Questionnaire { get; set; }
-        public int id_1 { get; set; }
+        public Nullable<int> id_Questionnaire { get; set; }
+        public Nullable<int> id_1 { get; set; }
         public int id_Utilisateur { get; set; }
-        public int id_Utilisateur_2 { get; set; }
+        public Nullable<int> id_Utilisateur_2 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Action1 { get; set; }
@@ -48,10 +48,10 @@ namespace pyrenaction.Models
         public virtual Utilisateur Utilisateur { get; set; }
         public virtual Utilisateur Utilisateur1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lien> Lien { get; set; }
+        public virtual ICollection<Lien> Liens { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mail> Mail { get; set; }
+        public virtual ICollection<Mail> Mails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tache> Tache { get; set; }
+        public virtual ICollection<Tache> Taches { get; set; }
     }
 }

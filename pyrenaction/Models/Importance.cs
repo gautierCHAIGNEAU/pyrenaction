@@ -17,7 +17,7 @@ namespace pyrenaction.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Importance()
         {
-            this.Action = new HashSet<Action>();
+            this.Actions = new HashSet<Action>();
         }
     
         public int id { get; set; }
@@ -25,6 +25,6 @@ namespace pyrenaction.Models
         public Nullable<int> numero { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Action { get; set; }
+        public virtual ICollection<Action> Actions { get; set; }
     }
 }

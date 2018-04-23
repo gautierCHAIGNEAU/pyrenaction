@@ -25,15 +25,15 @@ namespace pyrenaction.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Action> Action { get; set; }
-        public virtual DbSet<Famille> Famille { get; set; }
-        public virtual DbSet<Importance> Importance { get; set; }
-        public virtual DbSet<Lien> Lien { get; set; }
-        public virtual DbSet<Mail> Mail { get; set; }
-        public virtual DbSet<Question> Question { get; set; }
-        public virtual DbSet<Questionnaire> Questionnaire { get; set; }
-        public virtual DbSet<Site> Site { get; set; }
-        public virtual DbSet<Tache> Tache { get; set; }
-        public virtual DbSet<Utilisateur> Utilisateur { get; set; }
+        public virtual DbSet<Action> Actions { get; set; }
+        public virtual DbSet<Famille> Familles { get; set; }
+        public virtual DbSet<Importance> Importances { get; set; }
+        public virtual DbSet<Lien> Liens { get; set; }
+        public virtual DbSet<Mail> Mails { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Questionnaire> Questionnaires { get; set; }
+        public virtual DbSet<Site> Sites { get; set; }
+        public virtual DbSet<Tache> Taches { get; set; }
+        public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
     }
 }

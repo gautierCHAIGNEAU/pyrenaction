@@ -1,115 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="pyrenactionModelStoreContainer" CdmEntityContainer="pyrenactionEntities">
-    <EntitySetMapping Name="Action">
+    <EntitySetMapping Name="Actions">
       <EntityTypeMapping TypeName="pyrenactionModel.Action">
         <MappingFragment StoreEntitySet="Action">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="date_a" ColumnName="date_a" />
-          <ScalarProperty Name="delais" ColumnName="delais" />
-          <ScalarProperty Name="source" ColumnName="source" />
-          <ScalarProperty Name="analyse" ColumnName="analyse" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="statut" ColumnName="statut" />
-          <ScalarProperty Name="id_Importance" ColumnName="id_Importance" />
-          <ScalarProperty Name="id_Famille" ColumnName="id_Famille" />
-          <ScalarProperty Name="id_Site" ColumnName="id_Site" />
-          <ScalarProperty Name="id_Questionnaire" ColumnName="id_Questionnaire" />
-          <ScalarProperty Name="id_1" ColumnName="id_1" />
-          <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
           <ScalarProperty Name="id_Utilisateur_2" ColumnName="id_Utilisateur_2" />
+          <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
+          <ScalarProperty Name="id_1" ColumnName="id_1" />
+          <ScalarProperty Name="id_Questionnaire" ColumnName="id_Questionnaire" />
+          <ScalarProperty Name="id_Site" ColumnName="id_Site" />
+          <ScalarProperty Name="id_Famille" ColumnName="id_Famille" />
+          <ScalarProperty Name="id_Importance" ColumnName="id_Importance" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="analyse" ColumnName="analyse" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="delais" ColumnName="delais" />
+          <ScalarProperty Name="date_a" ColumnName="date_a" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Famille">
+    <EntitySetMapping Name="Familles">
       <EntityTypeMapping TypeName="pyrenactionModel.Famille">
         <MappingFragment StoreEntitySet="Famille">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Importance">
+    <EntitySetMapping Name="Importances">
       <EntityTypeMapping TypeName="pyrenactionModel.Importance">
         <MappingFragment StoreEntitySet="Importance">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
           <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Lien">
+    <EntitySetMapping Name="Liens">
       <EntityTypeMapping TypeName="pyrenactionModel.Lien">
         <MappingFragment StoreEntitySet="Lien">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="url" ColumnName="url" />
           <ScalarProperty Name="id_Action" ColumnName="id_Action" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Mail">
+    <EntitySetMapping Name="Mails">
       <EntityTypeMapping TypeName="pyrenactionModel.Mail">
         <MappingFragment StoreEntitySet="Mail">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="objet" ColumnName="objet" />
-          <ScalarProperty Name="contenu" ColumnName="contenu" />
-          <ScalarProperty Name="date_m" ColumnName="date_m" />
-          <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
           <ScalarProperty Name="id_Action" ColumnName="id_Action" />
+          <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
+          <ScalarProperty Name="date_m" ColumnName="date_m" />
+          <ScalarProperty Name="contenu" ColumnName="contenu" />
+          <ScalarProperty Name="objet" ColumnName="objet" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Question">
+    <EntitySetMapping Name="Questions">
       <EntityTypeMapping TypeName="pyrenactionModel.Question">
         <MappingFragment StoreEntitySet="Question">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="intitule" ColumnName="intitule" />
-          <ScalarProperty Name="reponse" ColumnName="reponse" />
-          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
           <ScalarProperty Name="id_Questionnaire" ColumnName="id_Questionnaire" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="reponse" ColumnName="reponse" />
+          <ScalarProperty Name="intitule" ColumnName="intitule" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Questionnaire">
+    <EntitySetMapping Name="Questionnaires">
       <EntityTypeMapping TypeName="pyrenactionModel.Questionnaire">
         <MappingFragment StoreEntitySet="Questionnaire">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nb_point" ColumnName="nb_point" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Site">
+    <EntitySetMapping Name="Sites">
       <EntityTypeMapping TypeName="pyrenactionModel.Site">
         <MappingFragment StoreEntitySet="Site">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="adresse" ColumnName="adresse" />
-          <ScalarProperty Name="ville" ColumnName="ville" />
           <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tache">
+    <EntitySetMapping Name="Taches">
       <EntityTypeMapping TypeName="pyrenactionModel.Tache">
         <MappingFragment StoreEntitySet="Tache">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="statut" ColumnName="statut" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
           <ScalarProperty Name="id_Action" ColumnName="id_Action" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Utilisateur">
+    <EntitySetMapping Name="Utilisateurs">
       <EntityTypeMapping TypeName="pyrenactionModel.Utilisateur">
         <MappingFragment StoreEntitySet="Utilisateur">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="prenom" ColumnName="prenom" />
-          <ScalarProperty Name="mdp" ColumnName="mdp" />
-          <ScalarProperty Name="qse" ColumnName="qse" />
-          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="qse" ColumnName="qse" />
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
