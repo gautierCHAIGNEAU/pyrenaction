@@ -34,7 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -58,15 +65,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Action.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Famille.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Importance.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Lien.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mail.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pyrenactionDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pyrenactionDBModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pyrenactionDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pyrenactionDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pyrenactionDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Questionnaire.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Site.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tache.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Utilisateur.cs">
+      <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Action\ucAction.cs">
       <SubType>UserControl</SubType>
@@ -141,6 +183,12 @@
     <Content Include="Models\pyrenactionDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>pyrenactionDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>pyrenactionDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\pyrenactionDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pyrenactionDBModel.edmx</DependentUpon>
+      <LastGenOutput>pyrenactionDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

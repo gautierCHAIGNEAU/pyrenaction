@@ -24,5 +24,24 @@ namespace pyrenaction
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
+            //{
+            //    Models.Utilisateur user = new Models.Utilisateur();
+            //    user.nom = "Chaigneau";
+            //    user.prenom = "Gautier";
+            //    user.email = "gautier.chaigneau@gmail.com";
+            //    user.qse = true;
+            //    user.tel = "0562356879";
+            //    user.mdp = "toto";
+
+            //    context.Utilisateur.Add(user);
+            //    context.SaveChanges();
+
+            //}
+
+        }
     }
 }
