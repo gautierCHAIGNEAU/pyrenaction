@@ -110,24 +110,16 @@
     <Compile Include="Models\Utilisateur.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\Action\ucAction.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\TacheViewModel.cs" />
+    <Compile Include="Views\Action.xaml.cs">
+      <DependentUpon>Action.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Action\ucAction.Designer.cs">
-      <DependentUpon>ucAction.cs</DependentUpon>
+    <Compile Include="Views\Connexion.xaml.cs">
+      <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Connexion\ucConnexion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Connexion\ucConnexion.Designer.cs">
-      <DependentUpon>ucConnexion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TableauDeBord\Action.cs" />
-    <Compile Include="Views\TableauDeBord\ucTableauDeBord.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\TableauDeBord\ucTableauDeBord.Designer.cs">
-      <DependentUpon>ucTableauDeBord.cs</DependentUpon>
+    <Compile Include="Views\Tache.xaml.cs">
+      <DependentUpon>Tache.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +133,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Action.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Connexion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tache.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -160,15 +164,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Action\ucAction.resx">
-      <DependentUpon>ucAction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Connexion\ucConnexion.resx">
-      <DependentUpon>ucConnexion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\TableauDeBord\ucTableauDeBord.resx">
-      <DependentUpon>ucTableauDeBord.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Models\pyrenactionDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>pyrenactionDBModel.Designer.cs</LastGenOutput>
@@ -187,7 +182,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Server\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\pyrenactionDBModel.Context.tt">

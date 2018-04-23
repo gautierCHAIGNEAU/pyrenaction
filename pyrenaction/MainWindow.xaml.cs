@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pyrenaction.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace pyrenaction
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IndexViewModel indexController;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,18 +29,21 @@ namespace pyrenaction
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            indexController = new IndexViewModel();
+
+
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
-                Models.Utilisateur user = new Models.Utilisateur();
-                user.nom = "Chaigneau";
-                user.prenom = "Gautier";
-                user.email = "gautier.chaigneau@gmail.com";
-                user.qse = true;
-                user.tel = "0562356879";
-                user.mdp = "toto";
+                //Models.Utilisateur user = new Models.Utilisateur();
+                //user.nom = "Chaigneau";
+                //user.prenom = "Gautier";
+                //user.email = "gautier.chaigneau@gmail.com";
+                //user.qse = true;
+                //user.tel = "0562356879";
+                //user.mdp = "toto";
 
-                context.Utilisateur.Add(user);
-                context.SaveChanges();
+                //context.Utilisateur.Add(user);
+                //context.SaveChanges();
 
                 //var query = from U in context.Utilisateur select U;
                 //List<Models.Utilisateur> listeUsers = query.ToList();
@@ -48,6 +53,14 @@ namespace pyrenaction
 
             }
 
+            
+
+        }
+
+        public void NouvelleAction(object sender, RoutedEventArgs e)
+        {
+            Views.Action actionView = new Views.Action();
+            textControl.Content = actionView;
         }
     }
 }

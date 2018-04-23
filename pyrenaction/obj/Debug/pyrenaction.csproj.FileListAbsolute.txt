@@ -30,10 +30,13 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction_Mark
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\MainWindow.baml
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.g.resources
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Properties.Resources.resources
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Action.ucAction.resources
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Connexion.ucConnexion.resources
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.GenerateResource.Cache
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.CoreCompileInputs.cache
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.TableauDeBord.ucTableauDeBord.resources
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Action.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Action.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.baml

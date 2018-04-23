@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\App.xaml
-11151548125
+4696695578
 21722122473
-29815071777
+271262346041
 2051215843
-MainWindow.xaml;
+MainWindow.xaml;Views\Action.xaml;Views\Connexion.xaml;Views\Tache.xaml;
 
-False
+True
 

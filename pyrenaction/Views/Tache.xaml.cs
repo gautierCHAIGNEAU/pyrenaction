@@ -18,7 +18,7 @@ namespace pyrenaction.Views
     /// <summary>
     /// Interaction logic for Tache.xaml
     /// </summary>
-    public partial class Tache : Page
+    public partial class Tache : Grid
     {
         public Tache()
         {

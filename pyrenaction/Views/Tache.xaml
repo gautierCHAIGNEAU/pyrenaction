@@ -1,4 +1,4 @@
-﻿<Page x:Class="pyrenaction.Views.Tache"
+﻿<Grid x:Class="pyrenaction.Views.Tache"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,4 +16,4 @@
         <Button x:Name="buttonValider" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
-</Page>
+</Grid>

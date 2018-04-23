@@ -18,7 +18,7 @@ namespace pyrenaction.Views
     /// <summary>
     /// Interaction logic for Action.xaml
     /// </summary>
-    public partial class Action : Page
+    public partial class Action : Grid
     {
         public Action()
         {

@@ -18,7 +18,7 @@ namespace pyrenaction.Views
     /// <summary>
     /// Interaction logic for Connexion.xaml
     /// </summary>
-    public partial class Connexion : Page
+    public partial class Connexion : Grid
     {
         public Connexion()
         {

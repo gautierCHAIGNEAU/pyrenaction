@@ -1,4 +1,4 @@
-﻿<Window xmlns:Views="clr-namespace:pyrenaction.Views.TableauDeBord"
+﻿<Window xmlns:Views="clr-namespace:pyrenaction.Views"
         x:Class="pyrenaction.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -14,9 +14,10 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
-            <MenuItem Header="Ajouter une tâche" />
+            <MenuItem Header="Ajouter une tâche" Click="NouvelleAction"/>
             <MenuItem Header="Ajouter un utilisateur"  />
         </Menu>
+        <ContentControl Content="ContentControl" Grid.Row="1" x:Name="textControl"/>
 
     </Grid>
 </Window>
