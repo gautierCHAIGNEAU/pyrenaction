@@ -26,8 +26,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -47,6 +51,7 @@
         <Label x:Name="labelSource" Content="Source" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelAnalyse" Content="Analyse" Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelDescription" Content="Description" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelTaches" Content="Tâches" Grid.Row="15" Grid.Column="0" HorizontalAlignment="Right"/>
 
         <DatePicker x:Name="inputDate" SelectedDate="{Binding Date_a, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
         <ComboBox x:Name="inputAction" ItemsSource="{Binding Actions}" IsSynchronizedWithCurrentItem="True"  Grid.Row="2" Grid.Column="1"/>
@@ -63,7 +68,7 @@
         <TextBox x:Name="inputAnalyse" Text="{Binding Analyse}" Grid.Row="13" Grid.Column="1" />
         <TextBox x:Name="inputDescription" Text="{Binding Description}" Grid.Row="14" Grid.Column="1" />
         
-        <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="15" Grid.Column="1"/>
+        <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="17" Grid.Column="1"/>
 
         <Label x:Name="labelTitre" Content="Gestion de l'action" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="center"/>
 
