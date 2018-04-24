@@ -1,44 +1,27 @@
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe.config
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\bin\Debug\pyrenaction.pdb
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csprojResolveAssemblyReference.cache
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\MainWindow.g.cs
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\App.g.cs
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.cache
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.lref
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\MainWindow.baml
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.g.resources
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Properties.Resources.resources
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Action.ucAction.resources
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Views.Connexion.ucConnexion.resources
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.GenerateResource.Cache
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
-C:\Users\maxime.cousin\Documents\COURS\Projet pyreneene\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe.config
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\pyrenaction.pdb
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\EntityFramework.dll
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\EntityFramework.xml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csprojResolveAssemblyReference.cache
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\MainWindow.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\App.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction_Content.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.cache
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.lref
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\MainWindow.baml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.g.resources
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Properties.Resources.resources
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.GenerateResource.Cache
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.CoreCompileInputs.cache
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Action.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.g.cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Action.baml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.baml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Tache.baml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.baml
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe.config
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\pyrenaction.exe
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\pyrenaction.pdb
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\EntityFramework.dll
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\EntityFramework.SqlServer.dll
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\EntityFramework.xml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\bin\Debug\EntityFramework.SqlServer.xml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.baml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\MainWindow.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Action.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Tache.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\ucTabBord.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\App.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction_Content.g.cs
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.cache
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction_MarkupCompile.lref
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\MainWindow.baml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Action.baml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Connexion.baml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\Views\Tache.baml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.g.resources
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.Properties.Resources.resources
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.GenerateResource.Cache
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.CoreCompileInputs.cache
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb

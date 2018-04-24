@@ -98,6 +98,7 @@ namespace pyrenaction.Views
 
                     ligneTab maLigne = new ligneTab();
                     maLigne.id = id_Action;
+
                     if (date_Action != null)
                         maLigne.date1 = ((DateTime)date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
                     else
@@ -111,7 +112,11 @@ namespace pyrenaction.Views
                     maLigne.source = source;
                     maLigne.analyse = analyse;
                     maLigne.description = description;
-                    maLigne.statut = (Boolean)statut;
+                    if (statut != null)
+                        maLigne.statut = (Boolean)statut;
+                    else
+                        maLigne.statut = false;
+
                     maLigne.importance = type_Importance;
                     maLigne.famille = type_Famille;
                     maLigne.site = nom_Site;

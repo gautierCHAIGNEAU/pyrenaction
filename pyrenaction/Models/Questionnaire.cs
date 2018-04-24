@@ -24,11 +24,7 @@ namespace pyrenaction.Models
         public int id { get; set; }
         public Nullable<int> nb_point { get; set; }
         public string nom { get; set; }
-        public override string ToString()
-        {
-            return nom;
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Actions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
