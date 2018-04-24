@@ -34,7 +34,7 @@ namespace pyrenaction.Views
 
         private void Submit(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show(_actionController.Source);
+            _actionController.Valider();
         }
 
     }
