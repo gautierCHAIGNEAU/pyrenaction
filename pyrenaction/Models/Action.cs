@@ -29,6 +29,11 @@ namespace pyrenaction.Models
         public string source { get; set; }
         public string analyse { get; set; }
         public string description { get; set; }
+
+        public override string ToString()
+        {
+            return description;
+        }
         public Nullable<bool> statut { get; set; }
         public int id_Importance { get; set; }
         public int id_Famille { get; set; }
