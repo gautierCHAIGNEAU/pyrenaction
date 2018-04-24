@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem Header="Tableau de bord"/>
             <MenuItem Header="Ajouter une tâche" Click="NouvelleAction"/>
             <MenuItem Header="Ajouter un utilisateur"  />
         </Menu>

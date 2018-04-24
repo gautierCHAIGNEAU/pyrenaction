@@ -5,8 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <DataGrid Name="dataGrid" />
+    <DataGrid Name="myDashboard" AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="N°" Binding="{Binding id}"/>
+            <DataGridTextColumn Header="Création" Binding="{Binding date1}"/>
+            <DataGridTextColumn Header="Délais" Binding="{Binding date2}"/>
+            <DataGridTextColumn Header="Source" Binding="{Binding source}"/>
+            <DataGridTextColumn Header="Analyse" Binding="{Binding analyse}"/>
+            <DataGridTextColumn Header="Description" Binding="{Binding description}"/>
+            <DataGridTextColumn Header="Statut" Binding="{Binding statut}"/>
+            <DataGridTextColumn Header="Importance" Binding="{Binding importance}"/>
+            <DataGridTextColumn Header="Famille" Binding="{Binding famille}"/>
+            <DataGridTextColumn Header="Site" Binding="{Binding site}"/>
+            <DataGridTextColumn Header="Questionnaire" Binding="{Binding questionnaire}"/>
+            <DataGridTextColumn Header="Liée" Binding="{Binding parente}"/>
+            <DataGridTextColumn Header="Responsable" Binding="{Binding utilisateur1}"/>
+            <DataGridTextColumn Header="Exécutant" Binding="{Binding utilisateur2}"/>
+            <DataGridTextColumn Header="% Avancement" Binding="{Binding pourcentage}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    
 
-    </Grid>
+
 </Grid>
