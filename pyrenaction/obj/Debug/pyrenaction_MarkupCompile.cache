@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\obj\Debug\
 pyrenaction
 none
 false
 DEBUG;TRACE
-C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\App.xaml
+D:\CESI\05_PrjASP\pyrenaction\pyrenaction\App.xaml
 5767651674
 21722122473
 25963138765
-2051215843
+20601706648
 MainWindow.xaml;Views\Action.xaml;Views\Connexion.xaml;Views\Tache.xaml;Views\ucTabBord.xaml;
 
 False

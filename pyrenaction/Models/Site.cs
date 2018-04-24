@@ -22,10 +22,6 @@ namespace pyrenaction.Models
     
         public int id { get; set; }
         public string nom { get; set; }
-        public override string ToString()
-        {
-            return nom;
-        }
         public string adresse { get; set; }
         public string ville { get; set; }
         public string cp { get; set; }

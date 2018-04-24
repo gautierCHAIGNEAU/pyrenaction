@@ -112,7 +112,11 @@ namespace pyrenaction.Views
                     maLigne.source = source;
                     maLigne.analyse = analyse;
                     maLigne.description = description;
-                    maLigne.statut = (Boolean)statut;
+                    if (statut != null)
+                        maLigne.statut = (Boolean)statut;
+                    else
+                        maLigne.statut = false;
+
                     maLigne.importance = type_Importance;
                     maLigne.famille = type_Famille;
                     maLigne.site = nom_Site;
