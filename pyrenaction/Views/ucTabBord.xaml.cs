@@ -128,8 +128,8 @@ namespace pyrenaction.Views
         public class ligneTab
         {
             public int id { get; set; }
-            public DateTime date1 { get; set; }
-            public DateTime date2 { get; set; }
+            public DateTime? date1 { get; set; }
+            public DateTime? date2 { get; set; }
             public String source { get; set; }
             public String analyse { get; set; }
             public String description { get; set; }
