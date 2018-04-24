@@ -98,20 +98,30 @@ namespace pyrenaction.Views
 
                     ligneTab maLigne = new ligneTab();
                     maLigne.id = id_Action;
-                    //maLigne.date1 = ((DateTime) date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
-                    //maLigne.date2 = ((DateTime) delais).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
-                    //maLigne.source = source;
-                    //maLigne.analyse = analyse;
-                    //maLigne.description = description;
-                    //maLigne.statut = (Boolean)statut;
-                    //maLigne.importance = type_Importance;
-                    //maLigne.famille = type_Famille;
-                    //maLigne.site = nom_Site;
-                    //maLigne.questionnaire = _questionnaire;
-                    //maLigne.parente = presence_id1;
-                    //maLigne.utilisateur1 = responsable;
-                    //maLigne.utilisateur2 = executant;
-                    //maLigne.pourcentage = 0;
+
+                    if (date_Action != null)
+                        maLigne.date1 = ((DateTime)date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    else
+                        maLigne.date1 = "N/A";
+
+                    if (delais != null)
+                        maLigne.date2 = ((DateTime) delais).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    else
+                        maLigne.date2 = "N/A";
+
+                    maLigne.source = source;
+                    maLigne.analyse = analyse;
+                    maLigne.description = description;
+                    maLigne.statut = (Boolean)statut;
+                    maLigne.importance = type_Importance;
+                    maLigne.famille = type_Famille;
+                    maLigne.site = nom_Site;
+                    maLigne.questionnaire = _questionnaire;
+                    maLigne.parente = presence_id1;
+                    maLigne.utilisateur1 = responsable;
+                    maLigne.utilisateur2 = executant;
+                    maLigne.pourcentage = 0;
+>>>>>>> 2d78f99ed28e1f9f427156b37da3ceee0dfe202d
 
                     listeLigne.Add(maLigne);
 
