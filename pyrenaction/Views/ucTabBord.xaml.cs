@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,11 @@ namespace pyrenaction.Views
 
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
+
+
                 var query = from U in context.Actions select U;
                 List<Models.Action> listeActions = query.ToList();
+                List<ligneTab> listeLigne = new List<ligneTab>();
 
                 foreach (Models.Action lAction in listeActions)
                 {
@@ -45,14 +49,14 @@ namespace pyrenaction.Views
 
                     // Questionnaire
                     var questionnaire = context.Questionnaires.Find(lAction.id_Questionnaire);
-                    String presence_Questionnaire = "";
+                    String _questionnaire = "";
                     try
                     {
-                        presence_Questionnaire = questionnaire.ToString();
+                        _questionnaire = questionnaire.nom;
                     }
                     catch (System.NullReferenceException)
                     {
-                        presence_Questionnaire = "N/A";
+                        _questionnaire = "N/A";
                     };
 
                     // Présence id1
@@ -88,20 +92,56 @@ namespace pyrenaction.Views
                     String description = lAction.description;
                     String source = lAction.source;
                     String analyse = lAction.analyse;
-                    var etat = lAction.statut;
+                    var statut = lAction.statut;
                     int id_Action = lAction.id;
 
 
+                    ligneTab maLigne = new ligneTab();
+                    maLigne.id = id_Action;
+                    maLigne.date1 = (DateTime)date_Action;
+                    maLigne.date2 = (DateTime)delais;
+                    maLigne.source = source;
+                    maLigne.analyse = analyse;
+                    maLigne.description = description;
+                    maLigne.statut = (Boolean)statut;
+                    maLigne.importance = type_Importance;
+                    maLigne.famille = type_Famille;
+                    maLigne.site = nom_Site;
+                    maLigne.questionnaire = _questionnaire;
+                    maLigne.parente = presence_id1;
+                    maLigne.utilisateur1 = responsable;
+                    maLigne.utilisateur2 = executant;
+                    maLigne.pourcentage = 0;
 
-
+                    listeLigne.Add(maLigne);
 
                 }
-                
 
-
+                myDashboard.ItemsSource = listeLigne;
 
 
             }
+
+
+        }
+
+        public class ligneTab
+        {
+            public int id { get; set; }
+            public DateTime date1 { get; set; }
+            public DateTime date2 { get; set; }
+            public String source { get; set; }
+            public String analyse { get; set; }
+            public String description { get; set; }
+            public Boolean statut { get; set; }
+            public String importance { get; set; }
+            public String famille { get; set; }
+            public String site { get; set; }
+            public String questionnaire { get; set; }
+            public String parente { get; set; }
+            public String utilisateur1 { get; set; }
+            public String utilisateur2 { get; set; }
+            public int pourcentage { get; set; }
 
         }
 
