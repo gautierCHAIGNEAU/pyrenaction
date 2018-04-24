@@ -29,9 +29,6 @@ namespace pyrenaction.Views
                 var query = from U in context.Actions select U;
                 List<Models.Action> listeActions = query.ToList();
 
-<<<<<<< HEAD
-                dataGrid.ItemsSource = listeActions;
-=======
                 foreach (Models.Action lAction in listeActions)
                 {
                     // Nom du site 
@@ -61,14 +58,13 @@ namespace pyrenaction.Views
 
 
 
-                    //lAction.id_Site
+                    
                 }
-                //dataGrid.ItemsSource = listeActions;
+                
 
 
 
 
->>>>>>> 58ca2b6935a037f1f39188e9b6a6b19a6f1390b1
             }
 
         }
