@@ -70,6 +70,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nb_point" Type="int" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Site">
     <Key>

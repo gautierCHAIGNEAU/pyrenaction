@@ -147,6 +147,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nb_point" Type="Int32" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Actions" Relationship="pyrenactionModel.FK_Action_id_Questionnaire" FromRole="Questionnaire" ToRole="Action" />
     <NavigationProperty Name="Questions" Relationship="pyrenactionModel.FK_Question_id_Questionnaire" FromRole="Questionnaire" ToRole="Question" />
   </EntityType>

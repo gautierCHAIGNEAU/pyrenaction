@@ -22,8 +22,7 @@ namespace pyrenaction.Models
     
         public int id { get; set; }
         public string nom { get; set; }
-
-        public override String ToString()
+        public override string ToString()
         {
             return nom;
         }

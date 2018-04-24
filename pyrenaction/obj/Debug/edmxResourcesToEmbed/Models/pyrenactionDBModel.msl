@@ -74,6 +74,7 @@
     <EntitySetMapping Name="Questionnaires">
       <EntityTypeMapping TypeName="pyrenactionModel.Questionnaire">
         <MappingFragment StoreEntitySet="Questionnaire">
+          <ScalarProperty Name="nom" ColumnName="nom" />
           <ScalarProperty Name="nb_point" ColumnName="nb_point" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

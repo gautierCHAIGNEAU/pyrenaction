@@ -30,7 +30,7 @@ namespace pyrenaction.Models
         public string analyse { get; set; }
         public string description { get; set; }
 
-        public override String ToString()
+        public override string ToString()
         {
             return description;
         }
