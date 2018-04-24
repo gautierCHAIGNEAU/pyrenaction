@@ -98,8 +98,16 @@ namespace pyrenaction.Views
 
                     ligneTab maLigne = new ligneTab();
                     maLigne.id = id_Action;
-                    maLigne.date1 = (DateTime)date_Action;
-                    maLigne.date2 = (DateTime)delais;
+                    if (date_Action != null)
+                        maLigne.date1 = ((DateTime)date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    else
+                        maLigne.date1 = "N/A";
+
+                    if (delais != null)
+                        maLigne.date2 = ((DateTime) delais).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    else
+                        maLigne.date2 = "N/A";
+
                     maLigne.source = source;
                     maLigne.analyse = analyse;
                     maLigne.description = description;
@@ -128,8 +136,10 @@ namespace pyrenaction.Views
         public class ligneTab
         {
             public int id { get; set; }
-            public DateTime date1 { get; set; }
-            public DateTime date2 { get; set; }
+
+            public String date1 { get; set; }
+            public String date2 { get; set; }
+
             public String source { get; set; }
             public String analyse { get; set; }
             public String description { get; set; }
