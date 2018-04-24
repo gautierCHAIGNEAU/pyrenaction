@@ -30,7 +30,39 @@ namespace pyrenaction.Views
                 var query = from U in context.Actions select U;
                 List<Models.Action> listeActions = query.ToList();
 
-                dataGrid.ItemsSource = listeActions;
+                foreach (Models.Action lAction in listeActions)
+                {
+                    // Nom du site 
+                    var site = context.Sites.Find(lAction.id_Site);
+                    String nom_Site = site.nom;
+
+                    // Niveau d'importance
+                    var importance = context.Importances.Find(lAction.id_Importance);
+                    String type_Importance = importance.nom;
+
+                    // Niveau d'importance
+                    var famille = context.Familles.Find(lAction.id_Famille);
+                    String type_Famille = famille.nom;
+
+                    // Niveau d'importance
+                    var questionnaire = context.Familles.Find(lAction.id_Questionnaire);
+                    String presence_Questionnaire = "";
+                    try
+                    {
+                        presence_Questionnaire = questionnaire.nom;
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        presence_Questionnaire = "N/A";
+                    };
+                       
+
+
+
+                    //lAction.id_Site
+                }
+                //dataGrid.ItemsSource = listeActions;
+
 
 
 
