@@ -94,10 +94,7 @@ namespace pyrenaction.Views
 
 
 
-<<<<<<< HEAD
-                    
-=======
->>>>>>> 969dabadf76f412e83733f120d6e475e76fb521d
+
                 }
                 
 
