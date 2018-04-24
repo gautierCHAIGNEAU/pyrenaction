@@ -38,6 +38,61 @@ namespace pyrenaction.ViewModels
             
         }
 
+        public List<Models.Famille> Familles
+        {
+            get
+            {
+                var query = from U in _context.Familles select U;
+                List<Models.Famille> listeFamilles = query.ToList();
+                return listeFamilles;
+            }
+
+        }
+
+        public List<Models.Site> Sites
+        {
+            get
+            {
+                var query = from U in _context.Sites select U;
+                List<Models.Site> listeSites = query.ToList();
+                return listeSites;
+            }
+
+        }
+
+        public List<Models.Utilisateur> Utilisateurs
+        {
+            get
+            {
+                var query = from U in _context.Utilisateurs select U;
+                List<Models.Utilisateur> listeUtilisateurs = query.ToList();
+                return listeUtilisateurs;
+            }
+
+        }
+
+        public List<Models.Questionnaire> Questionnaires
+        {
+            get
+            {
+                var query = from U in _context.Questionnaires select U;
+                List<Models.Questionnaire> listeQuestionnaires = query.ToList();
+                return listeQuestionnaires;
+            }
+
+        }
+
+        public List<Models.Action> Actions
+        {
+            get
+            {
+                var query = from U in _context.Actions select U;
+                List<Models.Action> listeActions = query.ToList();
+                return listeActions;
+            }
+
+        }
+
         public DateTime? Date_a
         {
             get { return _action.date_a; }

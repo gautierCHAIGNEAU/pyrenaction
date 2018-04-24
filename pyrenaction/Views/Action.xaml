@@ -49,13 +49,13 @@
         <Label x:Name="labelDescription" Content="Description" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right"/>
 
         <TextBox x:Name="inputDate" Grid.Row="3" Grid.Column="1" />
-        <ComboBox x:Name="inputAction" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox x:Name="inputAction" ItemsSource="{Binding Actions}" Grid.Row="2" Grid.Column="1"/>
         <ComboBox x:Name="inputImportance" ItemsSource="{Binding Importances}" Grid.Row="5" Grid.Column="1"/>
-        <ComboBox x:Name="inputFamille" Grid.Row="6" Grid.Column="1" />
-        <ComboBox x:Name="inputSite" Grid.Row="7" Grid.Column="1"/>
-        <ComboBox x:Name="inputResponsable1" Grid.Row="8" Grid.Column="1" />
-        <ComboBox x:Name="inputResponsable2" Grid.Row="9" Grid.Column="1" />
-        <ComboBox x:Name="inputQuestionnaire" Grid.Row="10" Grid.Column="1" />
+        <ComboBox x:Name="inputFamille" ItemsSource="{Binding Familles}" Grid.Row="6" Grid.Column="1" />
+        <ComboBox x:Name="inputSite" ItemsSource="{Binding Sites}" Grid.Row="7" Grid.Column="1"/>
+        <ComboBox x:Name="inputResponsable1" ItemsSource="{Binding Utilisateurs}" Grid.Row="8" Grid.Column="1" />
+        <ComboBox x:Name="inputResponsable2" ItemsSource="{Binding Utilisateurs}" Grid.Row="9" Grid.Column="1" />
+        <ComboBox x:Name="inputQuestionnaire" ItemsSource="{Binding Questionnaires}" Grid.Row="10" Grid.Column="1" />
         <CheckBox x:Name="inputStatut" Content="" Grid.Row="11" Grid.Column="1"/>
         <TextBox x:Name="inputDelais" Grid.Row="4" Grid.Column="1" />
 

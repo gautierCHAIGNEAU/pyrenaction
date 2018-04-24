@@ -24,6 +24,11 @@ namespace pyrenaction.Models
     
         public int id { get; set; }
         public string nom { get; set; }
+
+        public override String ToString()
+        {
+            return nom + " " + prenom;
+        }
         public string prenom { get; set; }
         public string mdp { get; set; }
         public Nullable<bool> qse { get; set; }

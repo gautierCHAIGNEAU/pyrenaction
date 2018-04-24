@@ -18,7 +18,12 @@ namespace pyrenaction.Models
         public Nullable<bool> statut { get; set; }
         public string nom { get; set; }
         public int id_Action { get; set; }
-    
+
+        public override String ToString()
+        {
+            return nom;
+        }
+
         public virtual Action Action { get; set; }
     }
 }
