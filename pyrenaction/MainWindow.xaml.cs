@@ -31,7 +31,6 @@ namespace pyrenaction
         {
             indexController = new IndexViewModel();
 
-
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
                 Views.ucTabBord tabBordView = new Views.ucTabBord();

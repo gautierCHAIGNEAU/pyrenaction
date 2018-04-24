@@ -5,40 +5,67 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:pyrenaction.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="434.793"
+      d:DesignHeight="542.86"
       Width="554.328">
 
-    <Grid Margin="0,0,0,-0.6" RenderTransformOrigin="0.501,0.501" HorizontalAlignment="Left" Width="554">
-        <Label x:Name="labelNumero" Content="N°" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputNumero" HorizontalAlignment="Left" Height="23" Margin="157,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelAction" Content="Action liée" HorizontalAlignment="Left" Margin="48,75,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelDate" Content="Date" HorizontalAlignment="Left" Margin="48,103,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputDate" HorizontalAlignment="Left" Height="23" Margin="157,107,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelDelais" Content="Délais" HorizontalAlignment="Left" Margin="48,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelImportance" Content="Importance" HorizontalAlignment="Left" Margin="48,165,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelFamille" Content="Famille" HorizontalAlignment="Left" Margin="48,196,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelSite" Content="Site" HorizontalAlignment="Left" Margin="48,227,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelResponsable1" Content="Responsable 1" HorizontalAlignment="Left" Margin="48,258,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelResponsable1_Copy" Content="Responsable 2" HorizontalAlignment="Left" Margin="48,288,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelQuestionnaire" Content="Questionnaire" HorizontalAlignment="Left" Margin="48,319,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelStatut" Content="Statut" HorizontalAlignment="Left" Margin="48,350,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="inputAction" HorizontalAlignment="Left" Margin="157,80,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputImportance" HorizontalAlignment="Left" Margin="157,169,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputFamille" HorizontalAlignment="Left" Margin="157,196,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputSite" HorizontalAlignment="Left" Margin="157,227,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputResponsable1" HorizontalAlignment="Left" Margin="157,258,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputResponsable2" HorizontalAlignment="Left" Margin="157,288,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="inputQuestionnaire" HorizontalAlignment="Left" Margin="157,319,0,0" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="inputStatut" Content="" HorizontalAlignment="Left" Margin="157,356,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputDelais" HorizontalAlignment="Left" Height="23" Margin="157,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelSource" Content="Source" HorizontalAlignment="Left" Margin="333,47,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelAnalyse" Content="Analyse" HorizontalAlignment="Left" Margin="333,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelDescription" Content="Description" HorizontalAlignment="Left" Margin="333,227,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputSource" HorizontalAlignment="Left" Height="80" Margin="409,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="inputAnalyse" HorizontalAlignment="Left" Height="80" Margin="409,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="inputDescription" HorizontalAlignment="Left" Height="80" Margin="408,227,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelTitre" Content="Gestion de l'action" HorizontalAlignment="Left" Margin="243,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonValider" Content="Valider" HorizontalAlignment="Left" Margin="372,356,0,0" VerticalAlignment="Top" Width="96" Height="34"/>
+    <Grid RenderTransformOrigin="0.501,0.501" HorizontalAlignment="Left" Width="554" Margin="0,0,0,-0.14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelNumero" Content="N°" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+
+        <Label x:Name="labelAction" Content="Action liée" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelDate" Content="Date" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
+
+        <Label x:Name="labelDelais" Content="Délais" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelImportance" Content="Importance" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelFamille" Content="Famille" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelSite" Content="Site" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelResponsable1" Content="Responsable 1" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelResponsable1_Copy" Content="Responsable 2" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelQuestionnaire" Content="Questionnaire" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelStatut" Content="Statut" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelSource" Content="Source" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelAnalyse" Content="Analyse" Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right"/>
+        <Label x:Name="labelDescription" Content="Description" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right"/>
+        <TextBox x:Name="inputNumero"  Grid.Column="1" Grid.Row="1" />
+        <TextBox x:Name="inputDate" Grid.Row="3" Grid.Column="1" />
+        <ComboBox x:Name="inputAction" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox x:Name="inputImportance" Grid.Row="5" Grid.Column="1"/>
+        <ComboBox x:Name="inputFamille" Grid.Row="6" Grid.Column="1" />
+        <ComboBox x:Name="inputSite" Grid.Row="7" Grid.Column="1"/>
+        <ComboBox x:Name="inputResponsable1" Grid.Row="8" Grid.Column="1" />
+        <ComboBox x:Name="inputResponsable2" Grid.Row="9" Grid.Column="1" />
+        <ComboBox x:Name="inputQuestionnaire" Grid.Row="10" Grid.Column="1" />
+        <CheckBox x:Name="inputStatut" Content="" Grid.Row="11" Grid.Column="1"/>
+        <TextBox x:Name="inputDelais" Grid.Row="4" Grid.Column="1" />
+
+        <TextBox x:Name="inputSource" Text="{Binding Source}" Grid.Row="12" Grid.Column="1" />
+        <TextBox x:Name="inputAnalyse" Grid.Row="13" Grid.Column="1" />
+        <TextBox x:Name="inputDescription" Grid.Row="14" Grid.Column="1" />
+        
+        <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="15" Grid.Column="1"/>
+
+        <Label x:Name="labelTitre" Content="Gestion de l'action" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="center"/>
 
     </Grid>
 </Grid>

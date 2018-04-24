@@ -1,4 +1,6 @@
-﻿using System;
+﻿using pyrenaction.ViewModels;
+using pyrenaction.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,18 @@ namespace pyrenaction.Views
     /// </summary>
     public partial class Action : Grid
     {
+        private ActionViewModel _actionController;
         public Action()
         {
             InitializeComponent();
+            _actionController = new ActionViewModel(new Models.Action());
+            this.DataContext = _actionController;
         }
+
+        private void Submit(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show(_actionController.Source);
+        }
+
     }
 }
