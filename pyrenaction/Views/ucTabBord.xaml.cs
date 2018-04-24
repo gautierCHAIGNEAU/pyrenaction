@@ -40,26 +40,61 @@ namespace pyrenaction.Views
                     var importance = context.Importances.Find(lAction.id_Importance);
                     String type_Importance = importance.nom;
 
-                    // Niveau d'importance
+                    // Famille
                     var famille = context.Familles.Find(lAction.id_Famille);
                     String type_Famille = famille.nom;
 
-                    // Niveau d'importance
-                    var questionnaire = context.Familles.Find(lAction.id_Questionnaire);
+                    // Questionnaire
+                    var questionnaire = context.Questionnaires.Find(lAction.id_Questionnaire);
                     String presence_Questionnaire = "";
                     try
                     {
-                        presence_Questionnaire = questionnaire.nom;
+                        presence_Questionnaire = questionnaire.ToString();
                     }
                     catch (System.NullReferenceException)
                     {
                         presence_Questionnaire = "N/A";
                     };
-                       
+
+                    // Présence id1
+                    var id1 = context.Actions.Find(lAction.id_1);
+                    String presence_id1 = "";
+                    try
+                    {
+                        presence_id1 = id1.description;
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        presence_id1 = "N/A";
+                    };
+
+                    // Utilisateur 1
+                    var utilisateur1 = context.Utilisateurs.Find(lAction.id_Utilisateur);
+                    String responsable = utilisateur1.nom;
+
+                    // Utilisateur 2
+                    var utilisateur2 = context.Utilisateurs.Find(lAction.id_Utilisateur_2);
+                    String executant = "";
+                    try
+                    {
+                        executant = utilisateur2.nom;
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        executant = "N/A";
+                    };
+
+                    var date_Action = lAction.date_a;
+                    var delais = lAction.delais;
+                    String description = lAction.description;
+                    String source = lAction.source;
+                    String analyse = lAction.analyse;
+                    var etat = lAction.statut;
+                    int id_Action = lAction.id;
 
 
 
-                    //lAction.id_Site
+
                 }
                 //dataGrid.ItemsSource = listeActions;
 
