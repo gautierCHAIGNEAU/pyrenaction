@@ -22,6 +22,8 @@ namespace pyrenaction
     public partial class MainWindow : Window
     {
         private IndexViewModel indexController;
+        private Views.Action _actionView;
+        private Views.ucTabBord _tabBordView;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,8 +35,9 @@ namespace pyrenaction
 
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
-                Views.ucTabBord tabBordView = new Views.ucTabBord();
-                textControl.Content = tabBordView;
+                _tabBordView = new Views.ucTabBord();
+                
+                textControl.Content = _tabBordView;
                 //Models.Utilisateur user = new Models.Utilisateur();
                 //user.nom = "Chaigneau";
                 //user.prenom = "Gautier";
@@ -60,8 +63,17 @@ namespace pyrenaction
 
         public void NouvelleAction(object sender, RoutedEventArgs e)
         {
-            Views.Action actionView = new Views.Action();
-            textControl.Content = actionView;
+            _actionView = new Views.Action();
+            _actionView.Valider += ValiderAction;
+            textControl.Content = _actionView;
+        }
+
+        private void ValiderAction(object sender, EventArgs e)
+        {
+            _actionView = null;
+            _tabBordView = new Views.ucTabBord();
+
+            textControl.Content = _tabBordView;
         }
     }
 }

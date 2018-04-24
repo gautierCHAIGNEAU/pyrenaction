@@ -46,7 +46,7 @@ namespace pyrenaction.ViewModels
             _action.Action2 = ActionSelected;
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
-
+            _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
             _context.Actions.Add(_action);
             _context.SaveChanges();
         }

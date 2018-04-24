@@ -25,6 +25,7 @@ namespace pyrenaction.Views
     {
         private ActionViewModel _actionController;
         private Views.Tache _tacheView;
+        public event EventHandler Valider;
         public Action()
         {
             InitializeComponent();
@@ -59,6 +60,8 @@ namespace pyrenaction.Views
                     Console.WriteLine("L'email n'a pu être envoyé : {0}.", ex.Message);
                 }
             }
+            Valider(this, EventArgs.Empty);
+
         }
 
         private void AjouterTache(object sender, RoutedEventArgs e)
