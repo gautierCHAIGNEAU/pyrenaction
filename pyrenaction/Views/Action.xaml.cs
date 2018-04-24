@@ -78,7 +78,7 @@ namespace pyrenaction.Views
 
         private void SupprimerTache(object sender, RoutedEventArgs e)
         {
-            
+            _actionController.SupprimerTache();
         }
 
         private void ValTache(object sender, EventArgs e)

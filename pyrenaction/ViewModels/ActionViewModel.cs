@@ -543,6 +543,22 @@ namespace pyrenaction.ViewModels
             _tacheCollectionView.MoveCurrentToLast();
         }
 
+        public void SupprimerTache()
+        {
+            Models.Tache tache = TacheSelected;
+
+            Models.Tache testExist = (from T in _context.Taches where T.id == tache.id select T).FirstOrDefault();
+
+            if(testExist != null)
+            {
+                _context.Taches.Remove(tache);
+                _context.SaveChanges();
+            }
+            
+            _ListeTaches.Remove(tache);
+            NotifyPropertyChanged("Taches");
+        }
+
 
 
     }
