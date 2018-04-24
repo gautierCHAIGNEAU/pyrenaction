@@ -50,6 +50,7 @@ namespace pyrenaction.ViewModels
         public ActionViewModel(Models.Action action)
         {
             _action = action;
+            _action.statut = false;
             _context = new Models.pyrenactionEntities();
 
             _ListeImportances = new ObservableCollection<Models.Importance>();

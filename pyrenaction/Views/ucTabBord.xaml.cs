@@ -98,20 +98,20 @@ namespace pyrenaction.Views
 
                     ligneTab maLigne = new ligneTab();
                     maLigne.id = id_Action;
-                    maLigne.date1 = ((DateTime) date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
-                    maLigne.date2 = ((DateTime) delais).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
-                    maLigne.source = source;
-                    maLigne.analyse = analyse;
-                    maLigne.description = description;
-                    maLigne.statut = (Boolean)statut;
-                    maLigne.importance = type_Importance;
-                    maLigne.famille = type_Famille;
-                    maLigne.site = nom_Site;
-                    maLigne.questionnaire = _questionnaire;
-                    maLigne.parente = presence_id1;
-                    maLigne.utilisateur1 = responsable;
-                    maLigne.utilisateur2 = executant;
-                    maLigne.pourcentage = 0;
+                    //maLigne.date1 = ((DateTime) date_Action).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    //maLigne.date2 = ((DateTime) delais).ToShortDateString().ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR"));
+                    //maLigne.source = source;
+                    //maLigne.analyse = analyse;
+                    //maLigne.description = description;
+                    //maLigne.statut = (Boolean)statut;
+                    //maLigne.importance = type_Importance;
+                    //maLigne.famille = type_Famille;
+                    //maLigne.site = nom_Site;
+                    //maLigne.questionnaire = _questionnaire;
+                    //maLigne.parente = presence_id1;
+                    //maLigne.utilisateur1 = responsable;
+                    //maLigne.utilisateur2 = executant;
+                    //maLigne.pourcentage = 0;
 
                     listeLigne.Add(maLigne);
 
