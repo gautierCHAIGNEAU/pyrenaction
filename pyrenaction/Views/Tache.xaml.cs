@@ -20,9 +20,23 @@ namespace pyrenaction.Views
     /// </summary>
     public partial class Tache : Grid
     {
+        public event EventHandler ValiderTache;
+        private ViewModels.TacheViewModel _tacheController;
         public Tache()
         {
             InitializeComponent();
+            _tacheController = new ViewModels.TacheViewModel(new Models.Tache());
+            this.DataContext = _tacheController;
+        }
+
+        private void buttonValider_Click(object sender, RoutedEventArgs e)
+        {
+            ValiderTache(this, EventArgs.Empty);
+        }
+
+        public Models.Tache getTache()
+        {
+            return _tacheController.Tache;
         }
     }
 }

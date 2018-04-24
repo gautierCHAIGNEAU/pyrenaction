@@ -10,10 +10,10 @@
     <Grid Margin="0,0,0,10">
         <Label x:Name="label" Content="Gestion de la tâche" HorizontalAlignment="Left" Margin="98,20,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelNom" Content="Nom" HorizontalAlignment="Left" Margin="52,79,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="inputStatutu" Content="" HorizontalAlignment="Left" Margin="125,116,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="inputStatutu" IsChecked="{Binding Statut}" Content="" HorizontalAlignment="Left" Margin="125,116,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelStatut" Content="Statut" HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputNom" HorizontalAlignment="Left" Height="23" Margin="125,83,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="buttonValider" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="inputNom"  Text="{Binding Nom}" HorizontalAlignment="Left" Height="23" Margin="125,83,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buttonValider" Click="buttonValider_Click" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Grid>

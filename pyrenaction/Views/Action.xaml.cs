@@ -24,7 +24,7 @@ namespace pyrenaction.Views
     public partial class Action : Grid
     {
         private ActionViewModel _actionController;
-        
+        private Views.Tache _tacheView;
         public Action()
         {
             InitializeComponent();
@@ -63,14 +63,28 @@ namespace pyrenaction.Views
 
         private void AjouterTache(object sender, RoutedEventArgs e)
         {
-            Views.Tache tacheView = new Views.Tache();
-            tacheControl.Content = tacheView;
+            _tacheView = new Views.Tache();
+            _tacheView.ValiderTache += ValTache;
+            tacheControl.Content = _tacheView;
+        }
+
+        private void ModifierTache(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void SupprimerTache(object sender, RoutedEventArgs e)
         {
             
         }
+
+        private void ValTache(object sender, EventArgs e)
+        {
+            _actionController.ValiderTache(_tacheView.getTache());
+            _tacheView = null;
+            tacheControl.Content = null;
+        }
+
 
     }
 }

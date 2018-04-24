@@ -112,6 +112,7 @@
     </Compile>
     <Compile Include="ViewModels\ActionViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\TacheViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Action.xaml.cs">
       <DependentUpon>Action.xaml</DependentUpon>

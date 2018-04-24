@@ -445,6 +445,16 @@ namespace pyrenaction.ViewModels
 
         }
 
+        public ObservableCollection<Models.Tache> Taches
+        {
+            get
+            {
+                return _ListeTaches;
+            }
+
+
+        }
+
 
 
         public DateTime? Date_a
@@ -526,7 +536,12 @@ namespace pyrenaction.ViewModels
         }
 
       
-
+        public void ValiderTache(Models.Tache tache)
+        {
+            _ListeTaches.Add(tache);
+            NotifyPropertyChanged("Taches");
+            _tacheCollectionView.MoveCurrentToLast();
+        }
 
 
 
