@@ -121,7 +121,6 @@ namespace pyrenaction.Views
                     maLigne.utilisateur1 = responsable;
                     maLigne.utilisateur2 = executant;
                     maLigne.pourcentage = 0;
->>>>>>> 2d78f99ed28e1f9f427156b37da3ceee0dfe202d
 
                     listeLigne.Add(maLigne);
 
