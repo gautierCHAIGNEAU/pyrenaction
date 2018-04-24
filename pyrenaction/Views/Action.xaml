@@ -67,6 +67,9 @@
         <TextBox x:Name="inputSource" Text="{Binding Source}" Grid.Row="12" Grid.Column="1" />
         <TextBox x:Name="inputAnalyse" Text="{Binding Analyse}" Grid.Row="13" Grid.Column="1" />
         <TextBox x:Name="inputDescription" Text="{Binding Description}" Grid.Row="14" Grid.Column="1" />
+        <ComboBox x:Name="inputTaches" ItemsSource="{Binding Taches}" IsSynchronizedWithCurrentItem="True"  Grid.Row="15" Grid.Column="1" />
+        <Button x:Name="ajouterTache" Click="AjouterTache" Content="Ajouter" Grid.Row="15" Grid.Column="2"/>
+        <Button x:Name="supprimerTache" Click="SupprimerTache" Content="Supprimer" Grid.Row="15" Grid.Column="3"/>
         
         <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="17" Grid.Column="1"/>
 

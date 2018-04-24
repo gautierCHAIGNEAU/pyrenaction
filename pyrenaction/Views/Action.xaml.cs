@@ -37,5 +37,15 @@ namespace pyrenaction.Views
             _actionController.Valider();
         }
 
+        private void AjouterTache(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void SupprimerTache(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

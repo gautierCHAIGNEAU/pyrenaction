@@ -34,6 +34,9 @@ namespace pyrenaction.ViewModels
         private ObservableCollection<Models.Utilisateur> _ListeUtilisateurs2;
         private readonly ICollectionView _utilisateurCollectionView2;
 
+        private ObservableCollection<Models.Tache> _ListeTaches;
+        private readonly ICollectionView _tacheCollectionView;
+
         public void Valider()
         {
             _action.Importance = ImportanceSelected;
@@ -194,6 +197,32 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _utilisateurCollectionView2.CurrentChanged += OnCollectionViewResp2CurrentChanged;
+
+
+
+
+            _ListeTaches = new ObservableCollection<Models.Tache>();
+            var queryTach = from U in _context.Taches select U;
+            List<Models.Tache> listeTach = queryTach.ToList();
+            foreach (Models.Tache t in listeTach)
+            {
+                if(t.id_Action == _action.id)
+                {
+                    _ListeTaches.Add(t);
+                }
+                
+            }
+
+            //définition de la collection view
+            _tacheCollectionView = CollectionViewSource.GetDefaultView(_ListeTaches);
+
+            if (_tacheCollectionView == null)
+            {
+                throw new NullReferenceException("_tacheCollectionView");
+            }
+
+            //ajout de l'événement à déclencher quand la vue courante change
+            _tacheCollectionView.CurrentChanged += OnCollectionViewTacheCurrentChanged;
         }
 
         public Models.Importance ImportanceSelected
@@ -280,6 +309,18 @@ namespace pyrenaction.ViewModels
             }
         }
 
+        public Models.Tache TacheSelected
+        {
+            get
+            {
+                if (_tacheCollectionView == null) return null;
+                if (_tacheCollectionView.CurrentItem == null) return null;
+
+                return (Models.Tache)_tacheCollectionView.CurrentItem;
+
+            }
+        }
+
 
 
         public void OnCollectionViewImportanceCurrentChanged(object sender, EventArgs e)
@@ -315,6 +356,11 @@ namespace pyrenaction.ViewModels
         public void OnCollectionViewResp2CurrentChanged(object sender, EventArgs e)
         {
             NotifyPropertyChanged("Resp2Selected");
+        }
+
+        public void OnCollectionViewTacheCurrentChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("TacheSelected");
         }
 
         public Models.Action Action
