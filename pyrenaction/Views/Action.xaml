@@ -50,7 +50,7 @@
 
         <TextBox x:Name="inputDate" Grid.Row="3" Grid.Column="1" />
         <ComboBox x:Name="inputAction" Grid.Row="2" Grid.Column="1"/>
-        <ComboBox x:Name="inputImportance" Grid.Row="5" Grid.Column="1"/>
+        <ComboBox x:Name="inputImportance" ItemsSource="{Binding Importances}" Grid.Row="5" Grid.Column="1"/>
         <ComboBox x:Name="inputFamille" Grid.Row="6" Grid.Column="1" />
         <ComboBox x:Name="inputSite" Grid.Row="7" Grid.Column="1"/>
         <ComboBox x:Name="inputResponsable1" Grid.Row="8" Grid.Column="1" />

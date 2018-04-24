@@ -23,10 +23,12 @@ namespace pyrenaction.Views
     public partial class Action : Grid
     {
         private ActionViewModel _actionController;
+        
         public Action()
         {
             InitializeComponent();
             _actionController = new ActionViewModel(new Models.Action());
+
             this.DataContext = _actionController;
         }
 
