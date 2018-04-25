@@ -50,7 +50,7 @@ namespace pyrenaction.ViewModels
             _action.Action2 = ActionSelected;
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
-            
+            _action.statut = false;
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
             int nbreTaches = _action.Taches.Count;
             int nbreTachesFinish = 0;

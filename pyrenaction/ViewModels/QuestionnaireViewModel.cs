@@ -24,6 +24,7 @@ namespace pyrenaction.ViewModels
             if(act != null)
             {
                 act.nb_points = points;
+                act.statut = true;
                 _context.SaveChanges();
             }
         }

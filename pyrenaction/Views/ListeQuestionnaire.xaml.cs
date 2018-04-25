@@ -27,7 +27,9 @@ namespace pyrenaction.Views
         {
             InitializeComponent();
             _listeQuestController = new ViewModels.ListeQuestionnaireViewModel();
+            
             dataGrid.ItemsSource = _listeQuestController.ListeActions;
+            
         }
 
         private void AfficherQuestionnaire(object sender, RoutedEventArgs e)
@@ -35,8 +37,12 @@ namespace pyrenaction.Views
 
             TextBlock tb = dataGrid.Columns[0].GetCellContent(dataGrid.Items[dataGrid.SelectedIndex]) as TextBlock;
             String id = tb.Text;
-            idActionAssociee = Int32.Parse(id);
-            afficherQuest(this, EventArgs.Empty);
+            if(id != "")
+            {
+                idActionAssociee = Int32.Parse(id);
+                afficherQuest(this, EventArgs.Empty);
+            }
+           
         }
     }
 }

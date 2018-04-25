@@ -27,7 +27,7 @@
 
         
 
-        <DataGrid x:Name="dataGrid" Grid.Row="1" Margin="0,5,0,0" AutoGenerateColumns="False">
+        <DataGrid x:Name="dataGrid" Grid.Row="1" Margin="0,5,0,0" AutoGenerateColumns="False" CanUserAddRows="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Width="30" Header="N° Action" Binding="{Binding id}" MinWidth="100"/>
                 <DataGridTextColumn Header="Action" Binding="{Binding description}" ElementStyle="{StaticResource WrapText}" MaxWidth="500"/>
