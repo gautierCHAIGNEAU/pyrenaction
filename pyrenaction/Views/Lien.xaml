@@ -15,6 +15,6 @@
         <Label x:Name="labelLien" Content="Lien" HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="inputNom"  Text="{Binding Nom}" HorizontalAlignment="Left" Height="23" Margin="98,83,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="147"/>
         <TextBox x:Name="inputLien"  Text="{Binding Url}" HorizontalAlignment="Left" Height="23" Margin="98,113,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="147"/>
-        <Button x:Name="buttonValider" Click="buttonValider_Click" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="buttonValider" Click="buttonValider_Click" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"  Style="{DynamicResource MaterialDesignRaisedAccentButton}"/>
     </Grid>
 </Grid>

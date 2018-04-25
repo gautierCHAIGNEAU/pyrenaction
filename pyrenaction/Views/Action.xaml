@@ -85,7 +85,7 @@
         <Button x:Name="modifierTache" Click="ModifierTache" Content="Modifier" Grid.Row="15" Grid.Column="3"/>
         <Button x:Name="supprimerTache" Click="SupprimerTache" Content="Supprimer" Grid.Row="15" Grid.Column="4"/>
         
-        <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="17" Grid.Column="1"/>
+        <Button x:Name="buttonValider" Click="Submit" Content="Valider" Grid.Row="17" Grid.Column="1" Style="{DynamicResource MaterialDesignRaisedAccentButton}"/>
 
         <Label x:Name="labelTitre" Content="Gestion de l'action" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="center"/>
 
