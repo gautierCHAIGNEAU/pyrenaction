@@ -154,6 +154,16 @@ namespace pyrenaction.Views
                     }
                     
                     maLigne.taches = theListe;
+
+
+                    ObservableCollection<Models.Lien> theListeLien = new ObservableCollection<Models.Lien>();
+                    foreach (Models.Lien _tch in lAction.Liens)
+                    {
+                        theListeLien.Add(_tch);
+                    }
+
+                    maLigne.liens = theListeLien;
+
                     listeLigne.Add(maLigne);
 
                 }
@@ -164,6 +174,11 @@ namespace pyrenaction.Views
             }
 
 
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Uri.ToString());
         }
 
         public class ligneTab
@@ -186,6 +201,7 @@ namespace pyrenaction.Views
             public String utilisateur2 { get; set; }
             public float pourcentage { get; set; }
            public ObservableCollection<Models.Tache> taches { get; set; }
+            public ObservableCollection<Models.Lien> liens { get; set; }
 
         }
 
@@ -194,5 +210,7 @@ namespace pyrenaction.Views
             
             DoubleClick(this, EventArgs.Empty);
         }
+
+        
     }
 }
