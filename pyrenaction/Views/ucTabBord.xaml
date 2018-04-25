@@ -27,21 +27,21 @@
             <DataGridTemplateColumn Header="Taches rattachées">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
-                        <ComboBox ItemsSource="{Binding taches}" SelectedIndex="0" BorderBrush="{x:Null}" Background="White">
-                            <ComboBox.ItemTemplate >
+                        <ListBox ItemsSource="{Binding taches}" BorderBrush="{x:Null}" >
+                            <ListBox.ItemTemplate >
                                 <DataTemplate>
                                     <TextBlock Text="{Binding nom}" Foreground="{Binding color}"></TextBlock>
                                 </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>
             <DataGridTemplateColumn Header="Liens rattachées">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
-                        <ComboBox ItemsSource="{Binding liens}"  BorderBrush="{x:Null}">
-                            <ComboBox.ItemTemplate >
+                        <ListBox ItemsSource="{Binding liens}"  BorderBrush="{x:Null}">
+                            <ListBox.ItemTemplate >
                                 <DataTemplate>
                                     <TextBlock>
                                       <Hyperlink NavigateUri="{Binding url}" RequestNavigate="Hyperlink_RequestNavigate">>
@@ -49,8 +49,8 @@
                                       </Hyperlink>              
                                     </TextBlock>
                                 </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>

@@ -157,6 +157,7 @@ namespace pyrenaction.Views
 
 
                     ObservableCollection<Models.Lien> theListeLien = new ObservableCollection<Models.Lien>();
+
                     foreach (Models.Lien _tch in lAction.Liens)
                     {
                         theListeLien.Add(_tch);
