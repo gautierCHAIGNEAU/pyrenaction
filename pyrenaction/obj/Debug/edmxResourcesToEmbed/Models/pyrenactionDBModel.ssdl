@@ -18,6 +18,7 @@
     <Property Name="id_1" Type="int" />
     <Property Name="id_Utilisateur" Type="int" Nullable="false" />
     <Property Name="id_Utilisateur_2" Type="int" />
+    <Property Name="nb_points" Type="int" />
   </EntityType>
   <EntityType Name="Famille">
     <Key>

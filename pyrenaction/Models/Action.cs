@@ -29,7 +29,6 @@ namespace pyrenaction.Models
         public string source { get; set; }
         public string analyse { get; set; }
         public string description { get; set; }
-
         public Nullable<bool> statut { get; set; }
         public int id_Importance { get; set; }
         public int id_Famille { get; set; }
@@ -38,6 +37,7 @@ namespace pyrenaction.Models
         public Nullable<int> id_1 { get; set; }
         public int id_Utilisateur { get; set; }
         public Nullable<int> id_Utilisateur_2 { get; set; }
+        public Nullable<int> nb_points { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Action1 { get; set; }

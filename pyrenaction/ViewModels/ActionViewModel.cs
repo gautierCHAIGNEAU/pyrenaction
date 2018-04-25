@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Net.Mail;
 
 namespace pyrenaction.ViewModels
 {
@@ -51,6 +52,37 @@ namespace pyrenaction.ViewModels
             _action.Utilisateur1 = Resp2Selected;
             
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
+            int nbreTaches = _action.Taches.Count;
+            int nbreTachesFinish = 0;
+            foreach(Models.Tache t in _action.Taches)
+            {
+                if(t.statut == true)
+                {
+                    nbreTachesFinish++;
+                }
+            }
+            if(nbreTachesFinish == nbreTaches && nbreTaches > 0)
+            {
+                
+                    var queryDest = from U in _context.Utilisateurs where U.id == _action.Utilisateur1.id select U;
+                    Models.Utilisateur Dest = queryDest.FirstOrDefault();
+                    try
+                    {
+                        String objet = "PYRENACTION: Action terminée, questionnaire à remplir.";
+                        String contenu = "Toutes les tâches de l'action: \n" + _action.description + "\n\n ont étés validées. Merci de vous connecter à l'application pour répondre au questionnaire";
+                        MailMessage mail = new MailMessage("pyrenaction@gmail.com", Dest.email, objet, contenu);
+                        SmtpClient stpc = new SmtpClient("smtp.gmail.com", 587);
+                        stpc.Credentials = new System.Net.NetworkCredential("pyrenaction@gmail.com", "Cesi1234%");
+                        stpc.EnableSsl = true;
+                        stpc.Send(mail);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("L'email n'a pu être envoyé : {0}.", ex.Message);
+                    }
+                
+            }
+
             _action.Liens = (ICollection<Models.Lien>)_ListeLiens;
             Models.Action testExist = (from T in _context.Actions where T.id == _action.id select T).FirstOrDefault();
 

@@ -23,6 +23,7 @@
           <Property Name="id_1" Type="int" />
           <Property Name="id_Utilisateur" Type="int" Nullable="false" />
           <Property Name="id_Utilisateur_2" Type="int" />
+          <Property Name="nb_points" Type="int" />
         </EntityType>
         <EntityType Name="Famille">
           <Key>
@@ -394,6 +395,7 @@
           <Property Name="id_1" Type="Int32" />
           <Property Name="id_Utilisateur" Type="Int32" Nullable="false" />
           <Property Name="id_Utilisateur_2" Type="Int32" />
+          <Property Name="nb_points" Type="Int32" />
           <NavigationProperty Name="Action1" Relationship="pyrenactionModel.FK_Action_id_1" FromRole="Action" ToRole="Action1" />
           <NavigationProperty Name="Action2" Relationship="pyrenactionModel.FK_Action_id_1" FromRole="Action1" ToRole="Action" />
           <NavigationProperty Name="Famille" Relationship="pyrenactionModel.FK_Action_id_Famille" FromRole="Action" ToRole="Famille" />
@@ -656,6 +658,7 @@
           <EntitySetMapping Name="Actions">
             <EntityTypeMapping TypeName="pyrenactionModel.Action">
               <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="nb_points" ColumnName="nb_points" />
                 <ScalarProperty Name="id_Utilisateur_2" ColumnName="id_Utilisateur_2" />
                 <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
                 <ScalarProperty Name="id_1" ColumnName="id_1" />

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Actions">
       <EntityTypeMapping TypeName="pyrenactionModel.Action">
         <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="nb_points" ColumnName="nb_points" />
           <ScalarProperty Name="id_Utilisateur_2" ColumnName="id_Utilisateur_2" />
           <ScalarProperty Name="id_Utilisateur" ColumnName="id_Utilisateur" />
           <ScalarProperty Name="id_1" ColumnName="id_1" />
