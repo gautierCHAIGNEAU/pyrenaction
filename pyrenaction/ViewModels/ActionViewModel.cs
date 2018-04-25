@@ -37,6 +37,9 @@ namespace pyrenaction.ViewModels
         private ObservableCollection<Models.Tache> _ListeTaches;
         private  ICollectionView _tacheCollectionView;
 
+        private ObservableCollection<Models.Lien> _ListeLiens;
+        private ICollectionView _lienCollectionView;
+
         public void Valider()
         {
             _action.Importance = ImportanceSelected;
@@ -48,6 +51,7 @@ namespace pyrenaction.ViewModels
             _action.Utilisateur1 = Resp2Selected;
             
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
+            _action.Liens = (ICollection<Models.Lien>)_ListeLiens;
             Models.Action testExist = (from T in _context.Actions where T.id == _action.id select T).FirstOrDefault();
 
             if(testExist == null)
@@ -301,6 +305,32 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _tacheCollectionView.CurrentChanged += OnCollectionViewTacheCurrentChanged;
+
+
+
+
+            _ListeLiens = new ObservableCollection<Models.Lien>();
+            var queryLiens = from U in _context.Liens select U;
+            List<Models.Lien> listeLiens = queryLiens.ToList();
+            foreach (Models.Lien l in listeLiens)
+            {
+                if (l.id_Action == _action.id)
+                {
+                    _ListeLiens.Add(l);
+                }
+
+            }
+
+            //définition de la collection view
+            _lienCollectionView = CollectionViewSource.GetDefaultView(_ListeLiens);
+
+            if (_lienCollectionView == null)
+            {
+                throw new NullReferenceException("_lienCollectionView");
+            }
+
+            //ajout de l'événement à déclencher quand la vue courante change
+            _lienCollectionView.CurrentChanged += OnCollectionViewLienCurrentChanged;
         }
 
         public Models.Importance ImportanceSelected
@@ -400,6 +430,19 @@ namespace pyrenaction.ViewModels
         }
 
 
+        public Models.Lien LienSelected
+        {
+            get
+            {
+                if (_lienCollectionView == null) return null;
+                if (_lienCollectionView.CurrentItem == null) return null;
+
+                return (Models.Lien)_lienCollectionView.CurrentItem;
+
+            }
+        }
+
+
 
         public void OnCollectionViewImportanceCurrentChanged(object sender, EventArgs e)
         {
@@ -439,6 +482,11 @@ namespace pyrenaction.ViewModels
         public void OnCollectionViewTacheCurrentChanged(object sender, EventArgs e)
         {
             NotifyPropertyChanged("TacheSelected");
+        }
+
+        public void OnCollectionViewLienCurrentChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("LienSelected");
         }
 
         public Models.Action Action
@@ -528,6 +576,16 @@ namespace pyrenaction.ViewModels
             get
             {
                 return _ListeTaches;
+            }
+
+
+        }
+
+        public ObservableCollection<Models.Lien> Liens
+        {
+            get
+            {
+                return _ListeLiens;
             }
 
 
@@ -644,6 +702,40 @@ namespace pyrenaction.ViewModels
             
             _ListeTaches.Remove(tache);
             NotifyPropertyChanged("Taches");
+        }
+
+
+
+        public void ValiderLien(Models.Lien lien)
+        {
+            if (_ListeLiens.Contains(lien) == false)
+            {
+                _ListeLiens.Add(lien);
+            }
+            else
+            {
+                _ListeLiens.Remove(lien);
+                _ListeLiens.Add(lien);
+            }
+
+            NotifyPropertyChanged("Liens");
+            _lienCollectionView.MoveCurrentToLast();
+        }
+
+        public void SupprimerLien()
+        {
+            Models.Lien lien = LienSelected;
+
+            Models.Lien testExist = (from T in _context.Liens where T.id == lien.id select T).FirstOrDefault();
+
+            if (testExist != null)
+            {
+                _context.Liens.Remove(lien);
+                _context.SaveChanges();
+            }
+
+            _ListeLiens.Remove(lien);
+            NotifyPropertyChanged("Liens");
         }
 
 

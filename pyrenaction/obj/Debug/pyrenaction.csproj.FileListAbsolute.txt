@@ -53,3 +53,5 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.cspr
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.csproj.CoreCompileInputs.cache
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Lien.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Lien.baml

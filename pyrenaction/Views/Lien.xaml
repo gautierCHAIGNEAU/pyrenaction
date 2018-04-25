@@ -1,0 +1,20 @@
+﻿<Grid x:Class="pyrenaction.Views.Lien"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pyrenaction.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      >
+
+    <Grid>
+        <Label x:Name="label" Content="Gestion du lien" HorizontalAlignment="Left" Margin="98,20,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelNom" Content="Nom" HorizontalAlignment="Left" Margin="52,79,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="labelLien" Content="Lien" HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="inputNom"  Text="{Binding Nom}" HorizontalAlignment="Left" Height="23" Margin="98,83,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="inputLien"  Text="{Binding Url}" HorizontalAlignment="Left" Height="23" Margin="98,113,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="147"/>
+        <Button x:Name="buttonValider" Click="buttonValider_Click" Content="Valider" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Grid>

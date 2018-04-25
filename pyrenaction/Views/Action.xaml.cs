@@ -25,6 +25,7 @@ namespace pyrenaction.Views
     {
         private ActionViewModel _actionController;
         private Views.Tache _tacheView;
+        private Views.Lien _lienView;
         public event EventHandler Valider;
         public Action()
         {
@@ -94,6 +95,38 @@ namespace pyrenaction.Views
         private void ValTache(object sender, EventArgs e)
         {
             _actionController.ValiderTache(_tacheView.getTache());
+            _tacheView = null;
+            tacheControl.Content = null;
+        }
+
+
+
+
+
+
+
+        private void AjouterLien(object sender, RoutedEventArgs e)
+        {
+            _lienView = new Views.Lien();
+            _lienView.ValiderLien += ValLien;
+            tacheControl.Content = _lienView;
+        }
+
+        private void ModifierLien(object sender, RoutedEventArgs e)
+        {
+            _lienView = new Views.Lien(_actionController.LienSelected);
+            _lienView.ValiderLien += ValLien;
+            tacheControl.Content = _lienView;
+        }
+
+        private void SupprimerLien(object sender, RoutedEventArgs e)
+        {
+            _actionController.SupprimerLien();
+        }
+
+        private void ValLien(object sender, EventArgs e)
+        {
+            _actionController.ValiderLien(_lienView.getLien());
             _tacheView = null;
             tacheControl.Content = null;
         }
