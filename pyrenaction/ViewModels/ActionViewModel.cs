@@ -47,7 +47,13 @@ namespace pyrenaction.ViewModels
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
-            _context.Actions.Add(_action);
+            Models.Action testExist = (from T in _context.Actions where T.id == _action.id select T).FirstOrDefault();
+
+            if(testExist == null)
+            {
+                _context.Actions.Add(_action);
+            }
+            
             _context.SaveChanges();
         }
 

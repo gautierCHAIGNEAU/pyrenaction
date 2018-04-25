@@ -66,6 +66,8 @@ namespace pyrenaction
             _actionView = new Views.Action();
             _actionView.Valider += ValiderAction;
             textControl.Content = _actionView;
+
+            _tabBordView = null;
         }
 
         public void Index(object sender, RoutedEventArgs e)
@@ -79,7 +81,7 @@ namespace pyrenaction
         {
             _actionView = null;
             _tabBordView = new Views.ucTabBord();
-
+            _tabBordView.DoubleClick += TabDoubleClick;
             textControl.Content = _tabBordView;
         }
 
@@ -94,6 +96,8 @@ namespace pyrenaction
             _actionView = new Views.Action(Int32.Parse(id));
             _actionView.Valider += ValiderAction;
             textControl.Content = _actionView;
+
+            _tabBordView = null;
         }
     }
 }
