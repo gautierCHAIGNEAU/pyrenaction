@@ -9,11 +9,22 @@
      >
 
     <Grid>
-        <Label x:Name="label" Content="Connexion" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelLogin" Content="Login" HorizontalAlignment="Left" Margin="52,108,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelMdp" Content="Mot de passe" HorizontalAlignment="Left" Margin="52,139,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="inputLogin" HorizontalAlignment="Left" Height="23" Margin="120,112,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="InputMdp" HorizontalAlignment="Left" Height="23" Margin="120,139,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Width="120"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="126*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="83*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Connexion" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label x:Name="labelLogin" Content="Login" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Label x:Name="labelMdp" Content="Mot de passe" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox x:Name="inputLogin" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="InputMdp" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="button" Grid.ColumnSpan="2" Grid.Column="0" Content="Button" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top"/>
 
     </Grid>
 </Grid>
