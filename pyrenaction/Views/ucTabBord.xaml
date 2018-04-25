@@ -37,6 +37,23 @@
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Liens rattachées">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <ComboBox ItemsSource="{Binding liens}" SelectedIndex="0" BorderBrush="{x:Null}">
+                            <ComboBox.ItemTemplate >
+                                <DataTemplate>
+                                    <TextBlock>
+                                      <Hyperlink NavigateUri="http://www.inetsis.fr/">
+                                         <TextBlock Text="{Binding nom}"/>
+                                      </Hyperlink>              
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
             <DataGridTextColumn Header="Responsable" Binding="{Binding utilisateur1}"/>
             <DataGridTextColumn Header="Exécutant" Binding="{Binding utilisateur2}"/>
             <DataGridTextColumn Header="% Avancement" Binding="{Binding pourcentage}"/>
