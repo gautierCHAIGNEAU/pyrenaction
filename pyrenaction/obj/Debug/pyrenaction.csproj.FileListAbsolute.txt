@@ -55,3 +55,8 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.exe
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\pyrenaction.pdb
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Lien.g.cs
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Lien.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignColors.dll
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\App.baml
