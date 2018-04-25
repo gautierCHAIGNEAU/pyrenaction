@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -127,6 +128,32 @@ namespace pyrenaction.Views
                     maLigne.utilisateur2 = executant;
                     maLigne.pourcentage = 0;
 
+                    ObservableCollection<String> theListe = new ObservableCollection<string>();
+
+
+                    int nbTaches = lAction.Taches.Count;
+                    int nbTachesFinies = 0;
+
+                    foreach (Models.Tache _tch in lAction.Taches)
+                    {
+                        if (_tch.statut == true)
+                            nbTachesFinies++;
+                    }
+
+
+                    if (nbTaches > 0)
+                        maLigne.pourcentage = (nbTachesFinies / nbTaches) * 100;
+                    else
+                        maLigne.pourcentage = 0;
+
+
+
+                    foreach (Models.Tache _tch in lAction.Taches)
+                    {
+                        theListe.Add(_tch.nom);
+                    }
+                    
+                    maLigne.taches = theListe;
                     listeLigne.Add(maLigne);
 
                 }
@@ -157,7 +184,8 @@ namespace pyrenaction.Views
             public String parente { get; set; }
             public String utilisateur1 { get; set; }
             public String utilisateur2 { get; set; }
-            public int pourcentage { get; set; }
+            public float pourcentage { get; set; }
+           public ObservableCollection<String> taches { get; set; }
 
         }
 
