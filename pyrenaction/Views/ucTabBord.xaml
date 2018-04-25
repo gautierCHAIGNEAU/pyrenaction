@@ -22,7 +22,13 @@
             <DataGridTemplateColumn Header="Taches rattachées">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
-                        <ComboBox ItemsSource="{Binding taches}" SelectedIndex="0" BorderBrush="{x:Null}" Background="White"/>
+                        <ComboBox ItemsSource="{Binding taches}" SelectedIndex="0" BorderBrush="{x:Null}" Background="White">
+                            <ComboBox.ItemTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding nom}" Foreground="{Binding color}"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>

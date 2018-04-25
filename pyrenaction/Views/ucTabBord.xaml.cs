@@ -128,7 +128,7 @@ namespace pyrenaction.Views
                     maLigne.utilisateur2 = executant;
                     maLigne.pourcentage = 0;
 
-                    ObservableCollection<String> theListe = new ObservableCollection<string>();
+                    ObservableCollection<Models.Tache> theListe = new ObservableCollection<Models.Tache>();
 
 
                     int nbTaches = lAction.Taches.Count;
@@ -141,8 +141,8 @@ namespace pyrenaction.Views
                     }
 
 
-                    if (nbTaches > 0)
-                        maLigne.pourcentage = (nbTachesFinies / nbTaches) * 100;
+                    if (nbTachesFinies > 0 && nbTaches > 0)
+                        maLigne.pourcentage = (nbTachesFinies * 100) / nbTaches;
                     else
                         maLigne.pourcentage = 0;
 
@@ -150,7 +150,7 @@ namespace pyrenaction.Views
 
                     foreach (Models.Tache _tch in lAction.Taches)
                     {
-                        theListe.Add(_tch.nom);
+                        theListe.Add(_tch);
                     }
                     
                     maLigne.taches = theListe;
@@ -185,7 +185,7 @@ namespace pyrenaction.Views
             public String utilisateur1 { get; set; }
             public String utilisateur2 { get; set; }
             public float pourcentage { get; set; }
-           public ObservableCollection<String> taches { get; set; }
+           public ObservableCollection<Models.Tache> taches { get; set; }
 
         }
 
