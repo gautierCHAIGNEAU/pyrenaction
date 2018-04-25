@@ -62,3 +62,5 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignTh
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\App.baml
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Questionnaire.g.cs
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Questionnaire.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ListeQuestionnaire.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\ListeQuestionnaire.baml

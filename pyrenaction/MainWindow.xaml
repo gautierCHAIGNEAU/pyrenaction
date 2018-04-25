@@ -25,6 +25,7 @@
             <Image Height="43" Width="68" RenderTransformOrigin="1,1" Source="Images/logo.jpg"/>
             <MenuItem Header="Accueil" Click="Index" />
             <MenuItem Header="Ajouter une action" Click="NouvelleAction"/>
+            <MenuItem Header="Questionnaires" Click="Questionnaires"/>
         </Menu>
         <ContentControl Content="ContentControl" Grid.Row="1" x:Name="textControl"/>
 

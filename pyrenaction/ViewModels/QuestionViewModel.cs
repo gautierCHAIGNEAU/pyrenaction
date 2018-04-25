@@ -9,7 +9,7 @@ namespace pyrenaction.ViewModels
     class QuestionViewModel
     {
         private Models.Question _question;
-
+        
         public QuestionViewModel(Models.Question question)
         {
             _question = question;

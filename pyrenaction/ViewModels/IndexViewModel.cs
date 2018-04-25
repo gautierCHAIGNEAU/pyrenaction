@@ -7,8 +7,10 @@ using System.Windows.Input;
 
 namespace pyrenaction.ViewModels
 {
-    class IndexViewModel 
+    
+    class IndexViewModel :ViewModelBase
     {
-        
+
+
     }
 }

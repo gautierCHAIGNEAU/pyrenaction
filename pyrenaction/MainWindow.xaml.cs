@@ -24,6 +24,9 @@ namespace pyrenaction
         private IndexViewModel _indexController;
         private Views.Action _actionView;
         private Views.ucTabBord _tabBordView;
+        private Views.ListeQuestionnaire _listeQuestView;
+        private Views.Questionnaire _questView;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,22 +41,7 @@ namespace pyrenaction
                 _tabBordView = new Views.ucTabBord();
                 _tabBordView.DoubleClick += TabDoubleClick;
                 textControl.Content = _tabBordView;
-                //Models.Utilisateur user = new Models.Utilisateur();
-                //user.nom = "Chaigneau";
-                //user.prenom = "Gautier";
-                //user.email = "gautier.chaigneau@gmail.com";
-                //user.qse = true;
-                //user.tel = "0562356879";
-                //user.mdp = "toto";
 
-                //context.Utilisateur.Add(user);
-                //context.SaveChanges();
-
-                //var query = from U in context.Utilisateur select U;
-                //List<Models.Utilisateur> listeUsers = query.ToList();
-
-                //context.Utilisateur.Remove(listeUsers.Last());
-                //context.SaveChanges();
 
             }
 
@@ -66,7 +54,16 @@ namespace pyrenaction
             _actionView = new Views.Action();
             _actionView.Valider += ValiderAction;
             textControl.Content = _actionView;
+            _listeQuestView = null;
+            _tabBordView = null;
+        }
 
+        public void Questionnaires(object sender, RoutedEventArgs e)
+        {
+            _listeQuestView = new Views.ListeQuestionnaire();
+            _listeQuestView.afficherQuest += AfficherQuest;
+            textControl.Content = _listeQuestView;
+            _actionView = null;
             _tabBordView = null;
         }
 
@@ -80,6 +77,24 @@ namespace pyrenaction
         private void ValiderAction(object sender, EventArgs e)
         {
             _actionView = null;
+            _tabBordView = new Views.ucTabBord();
+            _tabBordView.DoubleClick += TabDoubleClick;
+            textControl.Content = _tabBordView;
+        }
+
+        private void AfficherQuest(object sender, EventArgs e)
+        {
+            Views.ListeQuestionnaire listeQuest = (Views.ListeQuestionnaire)sender;
+
+            _questView = new Views.Questionnaire(listeQuest.idActionAssociee);
+            _questView.validerQuest += ValiderQuestionnaire;
+            textControl.Content = _questView;
+            _listeQuestView = null;
+        }
+
+        private void ValiderQuestionnaire(object sender, EventArgs e)
+        {
+            _questView = null;
             _tabBordView = new Views.ucTabBord();
             _tabBordView.DoubleClick += TabDoubleClick;
             textControl.Content = _tabBordView;

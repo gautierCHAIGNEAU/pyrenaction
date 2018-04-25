@@ -12,7 +12,7 @@
     </Grid.Resources>
     <DataGrid x:Name="myDashboard" AutoGenerateColumns="False"  IsReadOnly="True" MouseDoubleClick="myDashboard_MouseDoubleClick">
         <DataGrid.Columns>
-            <DataGridTextColumn Width="30" Header="N°" Binding="{Binding id}"/>
+            <DataGridTextColumn Width="100" Header="N°" Binding="{Binding id}"/>
             <DataGridTextColumn Header="Création" Binding="{Binding date1}"/>
             <DataGridTextColumn Header="Délais" Binding="{Binding date2}"/>
             <DataGridTextColumn Header="Source" ElementStyle="{StaticResource WrapText}" MaxWidth="300"  Binding="{Binding source}"/>
@@ -54,8 +54,8 @@
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>
-            <DataGridTextColumn Header="Responsable" Binding="{Binding utilisateur1}"/>
-            <DataGridTextColumn Header="Exécutant" Binding="{Binding utilisateur2}"/>
+            <DataGridTextColumn Header="Responsable 1" Binding="{Binding utilisateur1}"/>
+            <DataGridTextColumn Header="Responsable 2" Binding="{Binding utilisateur2}"/>
             <DataGridTextColumn Header="% Avancement" Binding="{Binding pourcentage}"/>
         </DataGrid.Columns>
     </DataGrid>

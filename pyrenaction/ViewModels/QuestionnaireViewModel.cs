@@ -12,17 +12,27 @@ namespace pyrenaction.ViewModels
         private Models.Action _action;
         private Models.pyrenactionEntities _context;
 
+        private bool checkedFalse { get; set; }
         public void Valider()
         {
             _context.SaveChanges();
         }
 
+        public void ValiderQuestionnaire(int idAction, int points)
+        {
+            Models.Action act = (from T in _context.Actions where T.id == idAction select T).FirstOrDefault();
+            if(act != null)
+            {
+                act.nb_points = points;
+                _context.SaveChanges();
+            }
+        }
         public QuestionnaireViewModel(Models.Questionnaire questionnaire)//, Models.Action action
         {
             _questionnaire = questionnaire;
             //_action = action;
             _context = new Models.pyrenactionEntities();
-
+            checkedFalse = false;
         }
 
         public Models.Questionnaire Questionnaire

@@ -4,43 +4,38 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:pyrenaction.Views"
-      mc:Ignorable="d" d:DesignWidth="300"
-       Height="306.4">
+      mc:Ignorable="d"
+     >
 
-    <Grid>
+    <Grid Margin="0,0,0.478,-0.236">
         <Grid.RowDefinitions>
-            <RowDefinition Height="21*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="11*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="21*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="labelTitre" Grid.ColumnSpan="3" Content="Questionnaire" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" Text="{Binding Nom}" Grid.ColumnSpan="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" Grid.Row="1"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" Grid.Row="2"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" Grid.Row="3"/>
-        <TextBlock x:Name="textBlock4" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" Grid.Row="4"/>
-        <TextBlock x:Name="textBlock5" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" Grid.Row="5"/>
-        <TextBox x:Name="inputComm1" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="1"/>
-        <TextBox x:Name="inputComm2" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="2"/>
-        <TextBox x:Name="inputComm3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="3"/>
-        <TextBox x:Name="inputComm4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="4"/>
-        <TextBox x:Name="inputComm5" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.Row="5" Grid.RowSpan="2"/>
-        <CheckBox x:Name="inputQ1" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" />
-        <CheckBox x:Name="inputQ2" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" />
-        <CheckBox x:Name="inputQ3" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" />
-        <CheckBox x:Name="inputQ4" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" />
-        <CheckBox x:Name="inputQ5" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" />
-        <Button x:Name="buttonValider" Grid.ColumnSpan="3" Content="Valider" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Top"/>
-        
+        <Label x:Name="labelTitre" Content="Questionnaire" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Margin="18,0,0.4,0" Width="84" Grid.Column="1"  />
+        <TextBox x:Name="textBox" Text="{Binding Nom}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Right" TextWrapping="Wrap" Grid.Row="1" />
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Right" TextWrapping="Wrap" Grid.Row="2" />
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Right" TextWrapping="Wrap" Grid.Row="3" />
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Right" TextWrapping="Wrap" Grid.Row="4" />
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Right" TextWrapping="Wrap" Grid.Row="5" />
+
+        <CheckBox x:Name="inputQ1"  Grid.Column="1" Grid.Row="1" IsChecked="{Binding checkedFalse}" />
+        <CheckBox x:Name="inputQ2"  Grid.Column="1" Grid.Row="2" IsChecked="{Binding checkedFalse}"  />
+        <CheckBox x:Name="inputQ3"  Grid.Column="1" Grid.Row="3" IsChecked="{Binding checkedFalse}" />
+        <CheckBox x:Name="inputQ4"  Grid.Column="1" Grid.Row="4" IsChecked="{Binding checkedFalse}" />
+        <CheckBox x:Name="inputQ5"  Grid.Column="1" Grid.Row="5" IsChecked="{Binding checkedFalse}"  />
+        <Button x:Name="buttonValider" Content="Valider" Click="ValiderQuestionnaire" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Top" Margin="13,43,13.4,0" Grid.RowSpan="2" Width="76" Grid.Column="1"/>
+
 
     </Grid>
 </Grid>
