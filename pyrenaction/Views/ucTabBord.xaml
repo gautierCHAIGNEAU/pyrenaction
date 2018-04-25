@@ -19,6 +19,13 @@
             <DataGridTextColumn Header="Site" Binding="{Binding site}"/>
             <DataGridTextColumn Header="Questionnaire" Binding="{Binding questionnaire}"/>
             <DataGridTextColumn Header="Liée" Binding="{Binding parente}"/>
+            <DataGridTemplateColumn Header="Taches rattachées">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <ComboBox ItemsSource="{Binding taches}" SelectedIndex="0" BorderBrush="{x:Null}" Background="White"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
             <DataGridTextColumn Header="Responsable" Binding="{Binding utilisateur1}"/>
             <DataGridTextColumn Header="Exécutant" Binding="{Binding utilisateur2}"/>
             <DataGridTextColumn Header="% Avancement" Binding="{Binding pourcentage}"/>
