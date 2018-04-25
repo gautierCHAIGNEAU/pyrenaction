@@ -5,20 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <Grid.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="WrapText">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Grid.Resources>
     <DataGrid x:Name="myDashboard" AutoGenerateColumns="False"  IsReadOnly="True" MouseDoubleClick="myDashboard_MouseDoubleClick">
         <DataGrid.Columns>
             <DataGridTextColumn Width="30" Header="N°" Binding="{Binding id}"/>
             <DataGridTextColumn Header="Création" Binding="{Binding date1}"/>
             <DataGridTextColumn Header="Délais" Binding="{Binding date2}"/>
-            <DataGridTextColumn Header="Source" Binding="{Binding source}"/>
-            <DataGridTextColumn Header="Analyse" Binding="{Binding analyse}"/>
-            <DataGridTextColumn Header="Description" Binding="{Binding description}"/>
+            <DataGridTextColumn Header="Source" ElementStyle="{StaticResource WrapText}" MaxWidth="300"  Binding="{Binding source}"/>
+            <DataGridTextColumn Header="Analyse" ElementStyle="{StaticResource WrapText}" MaxWidth="300"  Binding="{Binding analyse}"/>
+            <DataGridTextColumn Header="Description" ElementStyle="{StaticResource WrapText}" MaxWidth="300" Binding="{Binding description}"/>
             <DataGridTextColumn Header="Statut" Binding="{Binding statut}"/>
             <DataGridTextColumn Header="Importance" Binding="{Binding importance}"/>
             <DataGridTextColumn Header="Famille" Binding="{Binding famille}"/>
             <DataGridTextColumn Header="Site" Binding="{Binding site}"/>
             <DataGridTextColumn Header="Questionnaire" Binding="{Binding questionnaire}"/>
-            <DataGridTextColumn Header="Liée" Binding="{Binding parente}"/>
+            <DataGridTextColumn Header="Liée" ElementStyle="{StaticResource WrapText}" MaxWidth="300"  Binding="{Binding parente}"/>
             <DataGridTemplateColumn Header="Taches rattachées">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
