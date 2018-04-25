@@ -21,6 +21,7 @@ namespace pyrenaction.Views
     /// </summary>
     public partial class ucTabBord : Grid
     {
+        public event EventHandler DoubleClick;
         public ucTabBord()
         {
             InitializeComponent();
@@ -160,5 +161,10 @@ namespace pyrenaction.Views
 
         }
 
+        private void myDashboard_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+            DoubleClick(this, EventArgs.Empty);
+        }
     }
 }

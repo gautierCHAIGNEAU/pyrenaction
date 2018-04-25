@@ -21,7 +21,7 @@ namespace pyrenaction
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IndexViewModel indexController;
+        private IndexViewModel _indexController;
         private Views.Action _actionView;
         private Views.ucTabBord _tabBordView;
         public MainWindow()
@@ -31,12 +31,12 @@ namespace pyrenaction
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            indexController = new IndexViewModel();
+            _indexController = new IndexViewModel();
 
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
                 _tabBordView = new Views.ucTabBord();
-                
+                _tabBordView.DoubleClick += TabDoubleClick;
                 textControl.Content = _tabBordView;
                 //Models.Utilisateur user = new Models.Utilisateur();
                 //user.nom = "Chaigneau";
@@ -74,6 +74,19 @@ namespace pyrenaction
             _tabBordView = new Views.ucTabBord();
 
             textControl.Content = _tabBordView;
+        }
+
+        private void TabDoubleClick(object sender, EventArgs e)
+        {
+            Views.ucTabBord tabBord = (Views.ucTabBord)sender;
+            DataGrid myDashboard = tabBord.myDashboard;
+            TextBlock tb = myDashboard.Columns[0].GetCellContent(myDashboard.Items[myDashboard.SelectedIndex]) as TextBlock;
+            String id = tb.Text;
+
+
+            _actionView = new Views.Action(Int32.Parse(id));
+            _actionView.Valider += ValiderAction;
+            textControl.Content = _actionView;
         }
     }
 }

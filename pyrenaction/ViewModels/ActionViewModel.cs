@@ -14,28 +14,28 @@ namespace pyrenaction.ViewModels
         private Models.Action _action;
         private Models.pyrenactionEntities _context;
         private ObservableCollection<Models.Importance> _ListeImportances;
-        private readonly ICollectionView _importanceCollectionView;
+        private  ICollectionView _importanceCollectionView;
 
         private ObservableCollection<Models.Famille> _ListeFamilles;
-        private readonly ICollectionView _familleCollectionView;
+        private  ICollectionView _familleCollectionView;
 
         private ObservableCollection<Models.Site> _ListeSites;
-        private readonly ICollectionView _siteCollectionView;
+        private  ICollectionView _siteCollectionView;
 
         private ObservableCollection<Models.Questionnaire> _ListeQuestionnaires;
-        private readonly ICollectionView _questionnaireCollectionView;
+        private  ICollectionView _questionnaireCollectionView;
 
         private ObservableCollection<Models.Action> _ListeActions;
-        private readonly ICollectionView _actionCollectionView;
+        private  ICollectionView _actionCollectionView;
 
         private ObservableCollection<Models.Utilisateur> _ListeUtilisateurs1;
-        private readonly ICollectionView _utilisateurCollectionView1;
+        private  ICollectionView _utilisateurCollectionView1;
 
         private ObservableCollection<Models.Utilisateur> _ListeUtilisateurs2;
-        private readonly ICollectionView _utilisateurCollectionView2;
+        private  ICollectionView _utilisateurCollectionView2;
 
         private ObservableCollection<Models.Tache> _ListeTaches;
-        private readonly ICollectionView _tacheCollectionView;
+        private  ICollectionView _tacheCollectionView;
 
         public void Valider()
         {
@@ -50,12 +50,38 @@ namespace pyrenaction.ViewModels
             _context.Actions.Add(_action);
             _context.SaveChanges();
         }
+
+        public ActionViewModel(int id)
+        {
+            _context = new Models.pyrenactionEntities();
+            var query = from U in _context.Actions select U;
+            List<Models.Action> listeActions = query.ToList();
+            bool find = false;
+            foreach (Models.Action act in listeActions)
+            {
+                if(act.id == id)
+                {
+                    _action = act;
+                    find = true;
+                }
+            }
+
+            if(find == false)
+            {
+                _action = new Models.Action();
+            }
+            loadFields();
+        }
         public ActionViewModel(Models.Action action)
         {
             _action = action;
             _action.statut = false;
             _context = new Models.pyrenactionEntities();
+            loadFields();
+        }
 
+        private void loadFields()
+        {
             _ListeImportances = new ObservableCollection<Models.Importance>();
             var query = from U in _context.Importances select U;
             List<Models.Importance> listeImportances = query.ToList();
@@ -66,7 +92,7 @@ namespace pyrenaction.ViewModels
 
             //définition de la collection view
             _importanceCollectionView = CollectionViewSource.GetDefaultView(_ListeImportances);
-            
+
             if (_importanceCollectionView == null)
             {
                 throw new NullReferenceException("_importanceCollectionView");
@@ -206,11 +232,11 @@ namespace pyrenaction.ViewModels
             List<Models.Tache> listeTach = queryTach.ToList();
             foreach (Models.Tache t in listeTach)
             {
-                if(t.id_Action == _action.id)
+                if (t.id_Action == _action.id)
                 {
                     _ListeTaches.Add(t);
                 }
-                
+
             }
 
             //définition de la collection view

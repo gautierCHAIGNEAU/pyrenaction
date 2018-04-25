@@ -48,7 +48,7 @@
         <Label x:Name="labelResponsable1" Content="Responsable 1" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelResponsable1_Copy" Content="Responsable 2" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelQuestionnaire" Content="Questionnaire" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right"/>
-        <Label x:Name="labelStatut" Content="Statut" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right"/>
+      
         <Label x:Name="labelSource" Content="Source" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelAnalyse" Content="Analyse" Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right"/>
         <Label x:Name="labelDescription" Content="Description" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right"/>
@@ -62,7 +62,7 @@
         <ComboBox x:Name="inputResponsable1" ItemsSource="{Binding Resp1}" IsSynchronizedWithCurrentItem="True"  Grid.Row="8" Grid.Column="1" />
         <ComboBox x:Name="inputResponsable2" ItemsSource="{Binding Resp2}" IsSynchronizedWithCurrentItem="True"  Grid.Row="9" Grid.Column="1" />
         <ComboBox x:Name="inputQuestionnaire" ItemsSource="{Binding Questionnaires}" IsSynchronizedWithCurrentItem="True"  Grid.Row="10" Grid.Column="1" />
-        <CheckBox x:Name="inputStatut" IsChecked="{Binding Statut}" Content="" Grid.Row="11" Grid.Column="1"/>
+    
         <DatePicker x:Name="inputDelais" SelectedDate="{Binding Delais, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
 
         <TextBox x:Name="inputSource" Text="{Binding Source}" Grid.Row="12" Grid.Column="1" />

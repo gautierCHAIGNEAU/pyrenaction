@@ -34,6 +34,14 @@ namespace pyrenaction.Views
             this.DataContext = _actionController;
         }
 
+        public Action(int id)
+        {
+            InitializeComponent();
+            _actionController = new ActionViewModel(id);
+
+            this.DataContext = _actionController;
+        }
+
         private void Submit(object sender, RoutedEventArgs e)
         {
             _actionController.Valider();
