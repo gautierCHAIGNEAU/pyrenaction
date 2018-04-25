@@ -40,11 +40,11 @@
             <DataGridTemplateColumn Header="Liens rattachées">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
-                        <ComboBox ItemsSource="{Binding liens}" SelectedIndex="0" BorderBrush="{x:Null}">
+                        <ComboBox ItemsSource="{Binding liens}"  BorderBrush="{x:Null}">
                             <ComboBox.ItemTemplate >
                                 <DataTemplate>
                                     <TextBlock>
-                                      <Hyperlink NavigateUri="http://www.inetsis.fr/">
+                                      <Hyperlink NavigateUri="{Binding url}" RequestNavigate="Hyperlink_RequestNavigate">>
                                          <TextBlock Text="{Binding nom}"/>
                                       </Hyperlink>              
                                     </TextBlock>
