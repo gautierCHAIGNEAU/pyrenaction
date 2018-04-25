@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
-            <MenuItem Header="Tableau de bord"/>
+            <MenuItem Header="Tableau de bord" Click="Index"/>
             <MenuItem Header="Ajouter une action" Click="NouvelleAction"/>
         </Menu>
         <ContentControl Content="ContentControl" Grid.Row="1" x:Name="textControl"/>

@@ -68,6 +68,13 @@ namespace pyrenaction
             textControl.Content = _actionView;
         }
 
+        public void Index(object sender, RoutedEventArgs e)
+        {
+            _tabBordView = new Views.ucTabBord();
+            _tabBordView.DoubleClick += TabDoubleClick;
+            textControl.Content = _tabBordView;
+        }
+
         private void ValiderAction(object sender, EventArgs e)
         {
             _actionView = null;

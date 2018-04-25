@@ -100,7 +100,12 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _importanceCollectionView.CurrentChanged += OnCollectionViewImportanceCurrentChanged;
-
+            if(_action.Importance != null)
+            {
+                Models.Importance imp = _action.Importance;
+                _importanceCollectionView.MoveCurrentTo(imp);
+                NotifyPropertyChanged("Importances");
+            }
 
 
             _ListeFamilles = new ObservableCollection<Models.Famille>();
@@ -121,6 +126,14 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _familleCollectionView.CurrentChanged += OnCollectionViewFamilleCurrentChanged;
+            if (_action.Famille != null)
+            {
+                Models.Famille fam = _action.Famille;
+                _familleCollectionView.MoveCurrentTo(fam);
+                NotifyPropertyChanged("Familles");
+            }
+
+
 
 
             _ListeSites = new ObservableCollection<Models.Site>();
@@ -141,6 +154,13 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _siteCollectionView.CurrentChanged += OnCollectionViewSiteCurrentChanged;
+            if (_action.Site != null)
+            {
+                Models.Site site = _action.Site;
+                _siteCollectionView.MoveCurrentTo(site);
+                NotifyPropertyChanged("Sites");
+            }
+
 
 
             _ListeQuestionnaires = new ObservableCollection<Models.Questionnaire>();
@@ -161,6 +181,14 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _questionnaireCollectionView.CurrentChanged += OnCollectionViewQuestionnaireCurrentChanged;
+            if (_action.Questionnaire != null)
+            {
+                Models.Questionnaire quest = _action.Questionnaire;
+                _questionnaireCollectionView.MoveCurrentTo(quest);
+                NotifyPropertyChanged("Questionnaires");
+            }
+
+
 
 
             _ListeActions = new ObservableCollection<Models.Action>();
@@ -181,7 +209,12 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _actionCollectionView.CurrentChanged += OnCollectionViewActionCurrentChanged;
-
+            if (_action.Action2 != null)
+            {
+                Models.Action act = _action.Action2;
+                _actionCollectionView.MoveCurrentTo(act);
+                NotifyPropertyChanged("Actions");
+            }
 
 
 
@@ -203,6 +236,13 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _utilisateurCollectionView1.CurrentChanged += OnCollectionViewResp1CurrentChanged;
+            if (_action.Utilisateur != null)
+            {
+                Models.Utilisateur ut1 = _action.Utilisateur;
+                _utilisateurCollectionView1.MoveCurrentTo(ut1);
+                NotifyPropertyChanged("Resp1");
+            }
+
 
 
             _ListeUtilisateurs2 = new ObservableCollection<Models.Utilisateur>();
@@ -223,7 +263,12 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _utilisateurCollectionView2.CurrentChanged += OnCollectionViewResp2CurrentChanged;
-
+            if (_action.Utilisateur1 != null)
+            {
+                Models.Utilisateur ut2 = _action.Utilisateur1;
+                _utilisateurCollectionView2.MoveCurrentTo(ut2);
+                NotifyPropertyChanged("Resp2");
+            }
 
 
 
