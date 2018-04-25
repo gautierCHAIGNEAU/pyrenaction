@@ -127,6 +127,8 @@
     <Compile Include="ViewModels\ActionViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LienViewModel.cs" />
+    <Compile Include="ViewModels\QuestionnaireViewModel.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\TacheViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Action.xaml.cs">
@@ -137,6 +139,9 @@
     </Compile>
     <Compile Include="Views\Lien.xaml.cs">
       <DependentUpon>Lien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questionnaire.xaml.cs">
+      <DependentUpon>Questionnaire.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tache.xaml.cs">
       <DependentUpon>Tache.xaml</DependentUpon>
@@ -167,6 +172,10 @@
     <Page Include="Views\Lien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questionnaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Tache.xaml">
       <Generator>MSBuild:Compile</Generator>

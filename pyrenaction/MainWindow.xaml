@@ -23,7 +23,7 @@
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
             <Image Height="43" Width="68" RenderTransformOrigin="1,1" Source="Images/logo.jpg"/>
-            <MenuItem Header="Ajouter une action" Click="Index" />
+            <MenuItem Header="Accueil" Click="Index" />
             
 
             <MenuItem Header="Ajouter une action" Click="NouvelleAction"/>

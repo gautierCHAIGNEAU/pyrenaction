@@ -60,3 +60,5 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignTh
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\App.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Questionnaire.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Debug\Views\Questionnaire.baml
