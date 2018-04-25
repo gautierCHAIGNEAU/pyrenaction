@@ -25,7 +25,13 @@ namespace pyrenaction.Models
         }
 
 
+        public override string ToString()
+        {
+            return nom;
+        }
 
-        
+
+
+
     }
 }

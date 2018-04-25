@@ -13,7 +13,7 @@ namespace pyrenaction.ViewModels
         public LienViewModel(Models.Lien lien)
         {
             _lien = lien;
-
+            
         }
 
 

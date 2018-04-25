@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pyrenactionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Action">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_a" Type="datetime" />
+    <Property Name="delais" Type="datetime" />
+    <Property Name="source" Type="varchar" MaxLength="500" />
+    <Property Name="analyse" Type="varchar" MaxLength="200" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="statut" Type="bit" />
+    <Property Name="id_Importance" Type="int" Nullable="false" />
+    <Property Name="id_Famille" Type="int" Nullable="false" />
+    <Property Name="id_Site" Type="int" Nullable="false" />
+    <Property Name="id_Questionnaire" Type="int" />
+    <Property Name="id_1" Type="int" />
+    <Property Name="id_Utilisateur" Type="int" Nullable="false" />
+    <Property Name="id_Utilisateur_2" Type="int" />
+  </EntityType>
+  <EntityType Name="Famille">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Importance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+    <Property Name="numero" Type="int" />
+  </EntityType>
+  <EntityType Name="Lien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="100" />
+    <Property Name="url" Type="varchar" MaxLength="500" />
+    <Property Name="id_Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objet" Type="varchar" MaxLength="200" />
+    <Property Name="contenu" Type="text" />
+    <Property Name="date_m" Type="datetime" />
+    <Property Name="id_Utilisateur" Type="int" Nullable="false" />
+    <Property Name="id_Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intitule" Type="varchar" MaxLength="500" />
+    <Property Name="reponse" Type="bit" />
+    <Property Name="commentaire" Type="varchar" MaxLength="500" />
+    <Property Name="id_Questionnaire" Type="int" />
+  </EntityType>
+  <EntityType Name="Questionnaire">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nb_point" Type="int" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="200" />
+    <Property Name="adresse" Type="varchar" MaxLength="200" />
+    <Property Name="ville" Type="varchar" MaxLength="50" />
+    <Property Name="cp" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tache">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statut" Type="bit" />
+    <Property Name="nom" Type="varchar" MaxLength="200" />
+    <Property Name="id_Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+    <Property Name="prenom" Type="varchar" MaxLength="50" />
+    <Property Name="mdp" Type="varchar" MaxLength="500" />
+    <Property Name="qse" Type="bit" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="tel" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_Action_id_1">
+    <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+    <End Role="Action1" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Action">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action1">
+        <PropertyRef Name="id_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Famille">
+    <End Role="Famille" Type="Self.Famille" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Famille">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Famille" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Importance">
+    <End Role="Importance" Type="Self.Importance" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Importance">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Importance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Questionnaire">
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionnaire">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Questionnaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Site">
+    <End Role="Site" Type="Self.Site" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Site" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Utilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_id_Utilisateur_2">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="id_Utilisateur_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lien_id_Action">
+    <End Role="Action" Type="Self.Action" Multiplicity="1" />
+    <End Role="Lien" Type="Self.Lien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Action">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lien">
+        <PropertyRef Name="id_Action" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mail_id_Action">
+    <End Role="Action" Type="Self.Action" Multiplicity="1" />
+    <End Role="Mail" Type="Self.Mail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Action">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Mail">
+        <PropertyRef Name="id_Action" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mail_id_Utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="Mail" Type="Self.Mail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Mail">
+        <PropertyRef Name="id_Utilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_id_Questionnaire">
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
+    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionnaire">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="id_Questionnaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tache_id_Action">
+    <End Role="Action" Type="Self.Action" Multiplicity="1" />
+    <End Role="Tache" Type="Self.Tache" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Action">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tache">
+        <PropertyRef Name="id_Action" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pyrenactionModelStoreContainer">
+    <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Famille" EntityType="Self.Famille" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Importance" EntityType="Self.Importance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lien" EntityType="Self.Lien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mail" EntityType="Self.Mail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questionnaire" EntityType="Self.Questionnaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tache" EntityType="Self.Tache" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Action_id_1" Association="Self.FK_Action_id_1">
+      <End Role="Action" EntitySet="Action" />
+      <End Role="Action1" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Famille" Association="Self.FK_Action_id_Famille">
+      <End Role="Famille" EntitySet="Famille" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Importance" Association="Self.FK_Action_id_Importance">
+      <End Role="Importance" EntitySet="Importance" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Questionnaire" Association="Self.FK_Action_id_Questionnaire">
+      <End Role="Questionnaire" EntitySet="Questionnaire" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Site" Association="Self.FK_Action_id_Site">
+      <End Role="Site" EntitySet="Site" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Utilisateur" Association="Self.FK_Action_id_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_id_Utilisateur_2" Association="Self.FK_Action_id_Utilisateur_2">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lien_id_Action" Association="Self.FK_Lien_id_Action">
+      <End Role="Action" EntitySet="Action" />
+      <End Role="Lien" EntitySet="Lien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mail_id_Action" Association="Self.FK_Mail_id_Action">
+      <End Role="Action" EntitySet="Action" />
+      <End Role="Mail" EntitySet="Mail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mail_id_Utilisateur" Association="Self.FK_Mail_id_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Mail" EntitySet="Mail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_id_Questionnaire" Association="Self.FK_Question_id_Questionnaire">
+      <End Role="Questionnaire" EntitySet="Questionnaire" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tache_id_Action" Association="Self.FK_Tache_id_Action">
+      <End Role="Action" EntitySet="Action" />
+      <End Role="Tache" EntitySet="Tache" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

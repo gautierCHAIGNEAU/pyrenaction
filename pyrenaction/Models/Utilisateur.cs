@@ -30,10 +30,7 @@ namespace pyrenaction.Models
         public string email { get; set; }
         public string tel { get; set; }
 
-        public override string ToString()
-        {
-            return nom + " " + prenom;
-        }
+       
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Action> Actions { get; set; }

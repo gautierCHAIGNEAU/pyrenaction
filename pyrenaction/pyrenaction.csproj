@@ -74,15 +74,19 @@
     <Compile Include="Models\Action.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActionPartial.cs" />
     <Compile Include="Models\Famille.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FamillePartial.cs" />
     <Compile Include="Models\Importance.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImportancePartial.cs" />
     <Compile Include="Models\Lien.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LienPartial.cs" />
     <Compile Include="Models\Mail.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
@@ -107,9 +111,11 @@
     <Compile Include="Models\Questionnaire.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuestionnairePartial.cs" />
     <Compile Include="Models\Site.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SitePartial.cs" />
     <Compile Include="Models\Tache.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="Models\Utilisateur.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UtilisateurPartial.cs" />
     <Compile Include="ViewModels\ActionViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LienViewModel.cs" />
