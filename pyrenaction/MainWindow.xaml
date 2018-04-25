@@ -14,7 +14,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pyrenaction"
         mc:Ignorable="d"
-        Title="Pyrenaction" Height="350" Width="525" Loaded="Window_Loaded">
+        Title="Pyrenaction" Height="350" Width="525" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -22,7 +22,10 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
-            <MenuItem Header="Tableau de bord" Click="Index"/>
+            <Image Height="43" Width="68" RenderTransformOrigin="1,1" Source="Images/logo.jpg"/>
+            <MenuItem Header="Ajouter une action" Click="Index" />
+            
+
             <MenuItem Header="Ajouter une action" Click="NouvelleAction"/>
         </Menu>
         <ContentControl Content="ContentControl" Grid.Row="1" x:Name="textControl"/>

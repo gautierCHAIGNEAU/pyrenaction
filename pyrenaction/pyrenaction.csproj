@@ -215,6 +215,7 @@
     <Folder Include="Server\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\logo.jpg" />
     <Content Include="Models\pyrenactionDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>pyrenactionDBModel.Context.cs</LastGenOutput>

@@ -89,15 +89,19 @@ namespace pyrenaction
         {
             Views.ucTabBord tabBord = (Views.ucTabBord)sender;
             DataGrid myDashboard = tabBord.myDashboard;
-            TextBlock tb = myDashboard.Columns[0].GetCellContent(myDashboard.Items[myDashboard.SelectedIndex]) as TextBlock;
-            String id = tb.Text;
+            if(myDashboard.SelectedIndex > -1)
+            {
+                TextBlock tb = myDashboard.Columns[0].GetCellContent(myDashboard.Items[myDashboard.SelectedIndex]) as TextBlock;
+                String id = tb.Text;
 
 
-            _actionView = new Views.Action(Int32.Parse(id));
-            _actionView.Valider += ValiderAction;
-            textControl.Content = _actionView;
+                _actionView = new Views.Action(Int32.Parse(id));
+                _actionView.Valider += ValiderAction;
+                textControl.Content = _actionView;
 
-            _tabBordView = null;
+                _tabBordView = null;
+            }
+            
         }
     }
 }
