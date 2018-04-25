@@ -13,7 +13,11 @@ namespace pyrenaction.ViewModels
         public TacheViewModel(Models.Tache tache)
         {
             _tache = tache;
-            _tache.statut = false;
+            if(_tache.statut == null)
+            {
+                _tache.statut = false;
+            }
+           
         }
 
 

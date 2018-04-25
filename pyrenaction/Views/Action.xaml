@@ -65,10 +65,17 @@
     
         <DatePicker x:Name="inputDelais" SelectedDate="{Binding Delais, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
 
-        <TextBox x:Name="inputSource" Text="{Binding Source}" Grid.Row="12" Grid.Column="1" />
-        <TextBox x:Name="inputAnalyse" Text="{Binding Analyse}" Grid.Row="13" Grid.Column="1" />
-        <TextBox x:Name="inputDescription" Text="{Binding Description}" Grid.Row="14" Grid.Column="1" />
-        <ComboBox x:Name="inputTaches" ItemsSource="{Binding Taches}" IsSynchronizedWithCurrentItem="True"  Grid.Row="15" Grid.Column="1" />
+        <TextBox x:Name="inputSource" Text="{Binding Source}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="inputAnalyse" Text="{Binding Analyse}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="inputDescription" Text="{Binding Description}" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <ComboBox x:Name="inputTaches" ItemsSource="{Binding Taches}" IsSynchronizedWithCurrentItem="True"  Grid.Row="15" Grid.Column="1" >
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding nom}" Foreground="{Binding color}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
         <Button x:Name="ajouterTache" Click="AjouterTache" Content="Ajouter" Grid.Row="15" Grid.Column="2"/>
         <Button x:Name="modifierTache" Click="ModifierTache" Content="Modifier" Grid.Row="15" Grid.Column="3"/>
         <Button x:Name="supprimerTache" Click="SupprimerTache" Content="Supprimer" Grid.Row="15" Grid.Column="4"/>

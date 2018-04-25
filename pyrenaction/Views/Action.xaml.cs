@@ -81,7 +81,9 @@ namespace pyrenaction.Views
 
         private void ModifierTache(object sender, RoutedEventArgs e)
         {
-
+            _tacheView = new Views.Tache(_actionController.TacheSelected);
+            _tacheView.ValiderTache += ValTache;
+            tacheControl.Content = _tacheView;
         }
 
         private void SupprimerTache(object sender, RoutedEventArgs e)

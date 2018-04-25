@@ -107,6 +107,7 @@
     <Compile Include="Models\Tache.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TachePartial.cs" />
     <Compile Include="Models\Utilisateur.cs">
       <DependentUpon>pyrenactionDBModel.tt</DependentUpon>
     </Compile>

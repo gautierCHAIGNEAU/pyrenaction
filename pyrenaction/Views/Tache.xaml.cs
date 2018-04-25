@@ -29,6 +29,13 @@ namespace pyrenaction.Views
             this.DataContext = _tacheController;
         }
 
+        public Tache(Models.Tache tache)
+        {
+            InitializeComponent();
+            _tacheController = new ViewModels.TacheViewModel(tache);
+            this.DataContext = _tacheController;
+        }
+
         private void buttonValider_Click(object sender, RoutedEventArgs e)
         {
             ValiderTache(this, EventArgs.Empty);

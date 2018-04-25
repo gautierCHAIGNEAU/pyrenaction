@@ -46,6 +46,7 @@ namespace pyrenaction.ViewModels
             _action.Action2 = ActionSelected;
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
+            
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
             Models.Action testExist = (from T in _context.Actions where T.id == _action.id select T).FirstOrDefault();
 
@@ -615,7 +616,16 @@ namespace pyrenaction.ViewModels
       
         public void ValiderTache(Models.Tache tache)
         {
-            _ListeTaches.Add(tache);
+            if (_ListeTaches.Contains(tache) == false)
+            {
+                _ListeTaches.Add(tache);
+            }
+            else
+            {
+                _ListeTaches.Remove(tache);
+                _ListeTaches.Add(tache);
+            }
+            
             NotifyPropertyChanged("Taches");
             _tacheCollectionView.MoveCurrentToLast();
         }
