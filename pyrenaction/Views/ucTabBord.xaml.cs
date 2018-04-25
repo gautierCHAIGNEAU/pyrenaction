@@ -115,9 +115,9 @@ namespace pyrenaction.Views
                     maLigne.analyse = analyse;
                     maLigne.description = description;
                     if (statut != null)
-                        maLigne.statut = (Boolean)statut;
+                        maLigne.statut = ((Boolean)statut ? "Terminée" : "En cours");
                     else
-                        maLigne.statut = false;
+                        maLigne.statut = "";
 
                     maLigne.importance = type_Importance;
                     maLigne.famille = type_Famille;
@@ -157,6 +157,7 @@ namespace pyrenaction.Views
 
 
                     ObservableCollection<Models.Lien> theListeLien = new ObservableCollection<Models.Lien>();
+
                     foreach (Models.Lien _tch in lAction.Liens)
                     {
                         theListeLien.Add(_tch);
@@ -191,7 +192,7 @@ namespace pyrenaction.Views
             public String source { get; set; }
             public String analyse { get; set; }
             public String description { get; set; }
-            public Boolean statut { get; set; }
+            public String statut { get; set; }
             public String importance { get; set; }
             public String famille { get; set; }
             public String site { get; set; }
