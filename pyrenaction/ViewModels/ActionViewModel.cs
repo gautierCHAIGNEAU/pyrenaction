@@ -47,7 +47,17 @@ namespace pyrenaction.ViewModels
             _action.Famille = FamilleSelected;
             _action.Site = SiteSelected;
             _action.Questionnaire = QuestionnaireSelected;
-            _action.Action2 = ActionSelected;
+            if(ActionSelected.description == "Aucune")
+            {
+                _action.Action2 = null;
+
+            }
+            else
+            {
+                _action.Action2 = ActionSelected;
+
+            }
+            
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
             _action.statut = false;
@@ -241,7 +251,10 @@ namespace pyrenaction.ViewModels
             {
                 _ListeActions.Add(act);
             }
-
+            Models.Action actNull = new Models.Action();
+            actNull.description = "Aucune";
+            _ListeActions.Add(actNull);
+            
             //définition de la collection view
             _actionCollectionView = CollectionViewSource.GetDefaultView(_ListeActions);
 
@@ -256,6 +269,11 @@ namespace pyrenaction.ViewModels
             {
                 Models.Action act = _action.Action2;
                 _actionCollectionView.MoveCurrentTo(act);
+                NotifyPropertyChanged("Actions");
+            }
+            else
+            {
+                _actionCollectionView.MoveCurrentTo(actNull);
                 NotifyPropertyChanged("Actions");
             }
 

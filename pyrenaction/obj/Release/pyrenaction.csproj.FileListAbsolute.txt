@@ -33,3 +33,7 @@ C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\pyrenaction.cs
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\pyrenaction.exe
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\pyrenaction.pdb
 C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\pyrenaction.csprojResolveAssemblyReference.cache
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\Views\ListeQuestionnaire.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\Views\Questionnaire.g.cs
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\Views\ListeQuestionnaire.baml
+C:\Users\Gautier\source\repos\pyrenaction\pyrenaction\obj\Release\Views\Questionnaire.baml
