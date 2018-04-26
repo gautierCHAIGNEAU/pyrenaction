@@ -9,6 +9,8 @@ namespace pyrenaction.Models
 {
     public partial class Tache
     {
+
+        //couleur de la tache en fonction de statut. statut TRUE = tache terminée. statut FALSE = tache en cours
         public SolidColorBrush color {
             get
             {

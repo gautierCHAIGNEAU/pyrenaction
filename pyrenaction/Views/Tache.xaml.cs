@@ -29,6 +29,7 @@ namespace pyrenaction.Views
             this.DataContext = _tacheController;
         }
 
+        //Constructeur pour modifier un lien
         public Tache(Models.Tache tache)
         {
             InitializeComponent();

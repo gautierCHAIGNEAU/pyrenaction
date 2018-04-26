@@ -35,6 +35,7 @@ namespace pyrenaction.Views
             this.DataContext = _actionController;
         }
 
+        //Constructeur quand on a double cliquer sur le tablea de bord, on récupère l'id de l'action associée pour la modifier
         public Action(int id)
         {
             InitializeComponent();
@@ -43,18 +44,16 @@ namespace pyrenaction.Views
             this.DataContext = _actionController;
         }
 
+
+        //Valider l'action (ajouter/modifier)
         private void Submit(object sender, RoutedEventArgs e)
         {
             _actionController.Valider();
-
-            //Envoi de mail au responsable
-            Char delimiter = ' ';
-            String res = _actionController.Resp1Selected.ToString().Split(delimiter)[0];
-           
             Valider(this, EventArgs.Empty);
 
         }
 
+        //Affichage de la vue Gestion de tâche dans la fenetre Action
         private void AjouterTache(object sender, RoutedEventArgs e)
         {
             _tacheView = new Views.Tache();
@@ -62,6 +61,7 @@ namespace pyrenaction.Views
             tacheControl.Content = _tacheView;
         }
 
+        //Affichage de la vue Gestion de tâche dans la fenetre Action
         private void ModifierTache(object sender, RoutedEventArgs e)
         {
             _tacheView = new Views.Tache(_actionController.TacheSelected);
@@ -74,6 +74,7 @@ namespace pyrenaction.Views
             _actionController.SupprimerTache();
         }
 
+        //Valider une tache (ajouter/modifier)
         private void ValTache(object sender, EventArgs e)
         {
             _actionController.ValiderTache(_tacheView.getTache());
@@ -86,7 +87,7 @@ namespace pyrenaction.Views
 
 
 
-
+        //Affichage de la vue Gestion de lien dans la fenetre Action
         private void AjouterLien(object sender, RoutedEventArgs e)
         {
             _lienView = new Views.Lien();
@@ -94,6 +95,7 @@ namespace pyrenaction.Views
             tacheControl.Content = _lienView;
         }
 
+        //Affichage de la vue Gestion de lien dans la fenetre Action
         private void ModifierLien(object sender, RoutedEventArgs e)
         {
             _lienView = new Views.Lien(_actionController.LienSelected);
@@ -106,6 +108,8 @@ namespace pyrenaction.Views
             _actionController.SupprimerLien();
         }
 
+
+        //Valider un lien (ajouter/modifier)
         private void ValLien(object sender, EventArgs e)
         {
             _actionController.ValiderLien(_lienView.getLien());

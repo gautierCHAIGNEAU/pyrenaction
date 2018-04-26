@@ -12,12 +12,14 @@ namespace pyrenaction.ViewModels
         private Models.Action _action;
         private Models.pyrenactionEntities _context;
 
+        //Attribut bindé pour que les checkbox de la vue questionnaire soient à False à l'ouverture de la vue
         private bool checkedFalse { get; set; }
         public void Valider()
         {
             _context.SaveChanges();
         }
 
+        //On Valide le questionnaire en attribuant le nombre de points qu'il à calculer à l'action associée
         public void ValiderQuestionnaire(int idAction, int points)
         {
             Models.Action act = (from T in _context.Actions where T.id == idAction select T).FirstOrDefault();
@@ -28,10 +30,10 @@ namespace pyrenaction.ViewModels
                 _context.SaveChanges();
             }
         }
-        public QuestionnaireViewModel(Models.Questionnaire questionnaire)//, Models.Action action
+        public QuestionnaireViewModel(Models.Questionnaire questionnaire)
         {
             _questionnaire = questionnaire;
-            //_action = action;
+     
             _context = new Models.pyrenactionEntities();
             checkedFalse = false;
         }

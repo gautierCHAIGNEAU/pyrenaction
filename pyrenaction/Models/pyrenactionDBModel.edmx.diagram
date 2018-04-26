@@ -10,8 +10,8 @@
         <EntityTypeShape EntityType="pyrenactionModel.Importance" Width="1.5" PointX="0.75" PointY="13.375" />
         <EntityTypeShape EntityType="pyrenactionModel.Lien" Width="1.5" PointX="5.25" PointY="8.875" />
         <EntityTypeShape EntityType="pyrenactionModel.Mail" Width="1.5" PointX="8.25" PointY="4" />
-        <EntityTypeShape EntityType="pyrenactionModel.Question" Width="1.5" PointX="3" PointY="15.875" />
-        <EntityTypeShape EntityType="pyrenactionModel.Questionnaire" Width="1.5" PointX="0.75" PointY="16" />
+        <EntityTypeShape EntityType="pyrenactionModel.Question" Width="1.5" PointX="5.625" PointY="13.375" />
+        <EntityTypeShape EntityType="pyrenactionModel.Questionnaire" Width="1.5" PointX="7.875" PointY="11.375" />
         <EntityTypeShape EntityType="pyrenactionModel.Site" Width="1.5" PointX="0.75" PointY="8.125" />
         <EntityTypeShape EntityType="pyrenactionModel.Tache" Width="1.5" PointX="5.25" PointY="2.875" />
         <EntityTypeShape EntityType="pyrenactionModel.Utilisateur" Width="1.5" PointX="0.75" PointY="3.75" />

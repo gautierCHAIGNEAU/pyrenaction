@@ -32,6 +32,7 @@ namespace pyrenaction.Views
             this.DataContext = _lienController;
         }
 
+        //Constructeur pour modifier un lien
         public Lien(Models.Lien lien)
         {
             InitializeComponent();

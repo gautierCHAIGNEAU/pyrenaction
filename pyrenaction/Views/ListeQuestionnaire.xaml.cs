@@ -34,7 +34,7 @@ namespace pyrenaction.Views
 
         private void AfficherQuestionnaire(object sender, RoutedEventArgs e)
         {
-
+            //id de l'action
             TextBlock tb = dataGrid.Columns[0].GetCellContent(dataGrid.Items[dataGrid.SelectedIndex]) as TextBlock;
             String id = tb.Text;
             if(id != "")

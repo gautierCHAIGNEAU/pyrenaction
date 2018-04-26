@@ -32,7 +32,7 @@ namespace pyrenaction.Views
            
             using (Models.pyrenactionEntities context = new Models.pyrenactionEntities())
             {
-
+                //On récupère le questionnaire associé à l'action
                 Models.Action action = (from A in context.Actions where A.id == idAction select A).FirstOrDefault();
 
                 if(action != null)
@@ -66,6 +66,7 @@ namespace pyrenaction.Views
 
         private void ValiderQuestionnaire(object sender, RoutedEventArgs e)
         {
+            //Calcul du nombre de points en fonction des réponse
             points = 0;
             if(inputQ1.IsChecked == true)
             {

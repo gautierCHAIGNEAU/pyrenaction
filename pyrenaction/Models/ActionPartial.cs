@@ -15,6 +15,7 @@ namespace pyrenaction.Models
             return description;
         }
 
+        //Couleur du nombre de points à l'issu du questionnaire
         public SolidColorBrush color
         {
             get

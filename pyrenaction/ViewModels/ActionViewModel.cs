@@ -12,8 +12,12 @@ namespace pyrenaction.ViewModels
 {
     class ActionViewModel : ViewModelBase
     {
+
         private Models.Action _action;
         private Models.pyrenactionEntities _context;
+
+
+        //Liste et collections pour les ComboBox de la vue
         private ObservableCollection<Models.Importance> _ListeImportances;
         private  ICollectionView _importanceCollectionView;
 
@@ -41,27 +45,31 @@ namespace pyrenaction.ViewModels
         private ObservableCollection<Models.Lien> _ListeLiens;
         private ICollectionView _lienCollectionView;
 
+
+        //Valider l'action (création ou modification)
         public void Valider()
         {
             _action.Importance = ImportanceSelected;
             _action.Famille = FamilleSelected;
             _action.Site = SiteSelected;
             _action.Questionnaire = QuestionnaireSelected;
+
+            //action associée
             if(ActionSelected.description == "Aucune")
             {
                 _action.Action2 = null;
-
             }
             else
             {
                 _action.Action2 = ActionSelected;
-
             }
             
             _action.Utilisateur = Resp1Selected;
             _action.Utilisateur1 = Resp2Selected;
             _action.statut = false;
             _action.Taches = (ICollection<Models.Tache>)_ListeTaches;
+
+            //Calcul du nombre de tâches terminées. Si toutes les tâches sont terminées, on envoi un mail au responsable 2 pr qu'il remplisse le questionnaire
             int nbreTaches = _action.Taches.Count;
             int nbreTachesFinish = 0;
             foreach(Models.Tache t in _action.Taches)
@@ -94,6 +102,8 @@ namespace pyrenaction.ViewModels
             }
 
             _action.Liens = (ICollection<Models.Lien>)_ListeLiens;
+
+            //Test si l'action existe déjà en base de données. Si non, on l'ajoute. Si oui, on modifie.
             Models.Action testExist = (from T in _context.Actions where T.id == _action.id select T).FirstOrDefault();
 
             if(testExist == null)
@@ -104,6 +114,8 @@ namespace pyrenaction.ViewModels
             _context.SaveChanges();
         }
 
+
+        //constructeur pour pour modifier une action existante. id récupéré depuis le tableaude bord.
         public ActionViewModel(int id)
         {
             _context = new Models.pyrenactionEntities();
@@ -125,6 +137,8 @@ namespace pyrenaction.ViewModels
             }
             loadFields();
         }
+
+        //constructeur par défault
         public ActionViewModel(Models.Action action)
         {
             _action = action;
@@ -133,6 +147,9 @@ namespace pyrenaction.ViewModels
             loadFields();
         }
 
+
+
+        //Chargement des Combobox
         private void loadFields()
         {
             _ListeImportances = new ObservableCollection<Models.Importance>();
@@ -153,6 +170,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _importanceCollectionView.CurrentChanged += OnCollectionViewImportanceCurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if(_action.Importance != null)
             {
                 Models.Importance imp = _action.Importance;
@@ -179,6 +197,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _familleCollectionView.CurrentChanged += OnCollectionViewFamilleCurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Famille != null)
             {
                 Models.Famille fam = _action.Famille;
@@ -207,6 +226,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _siteCollectionView.CurrentChanged += OnCollectionViewSiteCurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Site != null)
             {
                 Models.Site site = _action.Site;
@@ -234,6 +254,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _questionnaireCollectionView.CurrentChanged += OnCollectionViewQuestionnaireCurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Questionnaire != null)
             {
                 Models.Questionnaire quest = _action.Questionnaire;
@@ -252,6 +273,8 @@ namespace pyrenaction.ViewModels
                 _ListeActions.Add(act);
             }
             Models.Action actNull = new Models.Action();
+
+            //ajout d'une action vide pour que l'utilisateur puisse séléctionner "Aucune" action associée.
             actNull.description = "Aucune";
             _ListeActions.Add(actNull);
             
@@ -265,6 +288,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _actionCollectionView.CurrentChanged += OnCollectionViewActionCurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Action2 != null)
             {
                 Models.Action act = _action.Action2;
@@ -297,6 +321,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _utilisateurCollectionView1.CurrentChanged += OnCollectionViewResp1CurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Utilisateur != null)
             {
                 Models.Utilisateur ut1 = _action.Utilisateur;
@@ -324,6 +349,7 @@ namespace pyrenaction.ViewModels
 
             //ajout de l'événement à déclencher quand la vue courante change
             _utilisateurCollectionView2.CurrentChanged += OnCollectionViewResp2CurrentChanged;
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             if (_action.Utilisateur1 != null)
             {
                 Models.Utilisateur ut2 = _action.Utilisateur1;
@@ -336,6 +362,7 @@ namespace pyrenaction.ViewModels
             _ListeTaches = new ObservableCollection<Models.Tache>();
             var queryTach = from U in _context.Taches select U;
             List<Models.Tache> listeTach = queryTach.ToList();
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             foreach (Models.Tache t in listeTach)
             {
                 if (t.id_Action == _action.id)
@@ -362,6 +389,7 @@ namespace pyrenaction.ViewModels
             _ListeLiens = new ObservableCollection<Models.Lien>();
             var queryLiens = from U in _context.Liens select U;
             List<Models.Lien> listeLiens = queryLiens.ToList();
+            //Si on est sur une action existante à modifier, on selectionne l'item correspondant
             foreach (Models.Lien l in listeLiens)
             {
                 if (l.id_Action == _action.id)
@@ -382,6 +410,8 @@ namespace pyrenaction.ViewModels
             //ajout de l'événement à déclencher quand la vue courante change
             _lienCollectionView.CurrentChanged += OnCollectionViewLienCurrentChanged;
         }
+
+
 
         public Models.Importance ImportanceSelected
         {
@@ -539,6 +569,85 @@ namespace pyrenaction.ViewModels
             NotifyPropertyChanged("LienSelected");
         }
 
+
+        public DateTime? Date_a
+        {
+            get { return _action.date_a; }
+            set
+            {
+                if (_action.date_a != value)
+                {
+                    _action.date_a = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public DateTime? Delais
+        {
+            get { return _action.delais; }
+            set
+            {
+                if (_action.delais != value)
+                {
+                    _action.delais = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public String Source
+        {
+            get { return _action.source; }
+            set
+            {
+                if (_action.source != value)
+                {
+                    _action.source = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public String Analyse
+        {
+            get { return _action.analyse; }
+            set
+            {
+                if (_action.analyse != value)
+                {
+                    _action.analyse = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public String Description
+        {
+            get { return _action.description; }
+            set
+            {
+                if (_action.description != value)
+                {
+                    _action.description = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public bool? Statut
+        {
+            get { return _action.statut; }
+            set
+            {
+                if (_action.statut != value)
+                {
+                    _action.statut = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         public Models.Action Action
         {
             get
@@ -547,7 +656,6 @@ namespace pyrenaction.ViewModels
             }
         }
 
-        
 
         public ObservableCollection<Models.Importance> Importances
         {
@@ -643,87 +751,14 @@ namespace pyrenaction.ViewModels
 
 
 
-        public DateTime? Date_a
-        {
-            get { return _action.date_a; }
-            set
-            {
-                if (_action.date_a != value)
-                {
-                    _action.date_a = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
 
-        public DateTime? Delais
-        {
-            get { return _action.delais; }
-            set
-            {
-                if (_action.delais != value)
-                {
-                    _action.delais = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        public String Source
-        {
-            get { return _action.source; }
-            set
-            {
-                if (_action.source != value)
-                {
-                    _action.source = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        public String Analyse
-        {
-            get { return _action.analyse; }
-            set
-            {
-                if (_action.analyse != value)
-                {
-                    _action.analyse = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        public String Description
-        {
-            get { return _action.description; }
-            set
-            {
-                if (_action.description != value)
-                {
-                    _action.description = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        public bool? Statut
-        {
-            get { return _action.statut; }
-            set
-            {
-                if (_action.statut != value)
-                {
-                    _action.statut = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
 
       
+
+        
         public void ValiderTache(Models.Tache tache)
         {
+            //Si la tache existe, on supprimer l'ancienne et ajoute la modifiée dans la combobox
             if (_ListeTaches.Contains(tache) == false)
             {
                 _ListeTaches.Add(tache);
@@ -758,6 +793,7 @@ namespace pyrenaction.ViewModels
 
         public void ValiderLien(Models.Lien lien)
         {
+            //Si le lien existe, on supprimer l'ancienne et ajoute la modifiée dans la combobox
             if (_ListeLiens.Contains(lien) == false)
             {
                 _ListeLiens.Add(lien);
